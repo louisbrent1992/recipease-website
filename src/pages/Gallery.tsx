@@ -33,7 +33,7 @@ const Gallery = () => {
 			title: "Recipe Import Screen",
 			description: "Seamlessly import recipes from social media and websites",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099235/pexels-photo-4099235.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/recipe-import.png",
 		},
 		{
 			id: 2,
@@ -41,7 +41,7 @@ const Gallery = () => {
 			title: "AI Recipe Generator",
 			description: "Generate personalized recipes with AI technology",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099238/pexels-photo-4099238.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/ai-generator.png",
 		},
 		{
 			id: 3,
@@ -49,7 +49,7 @@ const Gallery = () => {
 			title: "Recipe Collection",
 			description: "Organize and manage your recipe collection",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099236/pexels-photo-4099236.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/recipe-collection.png",
 		},
 		{
 			id: 4,
@@ -57,7 +57,7 @@ const Gallery = () => {
 			title: "Smart Shopping List",
 			description: "Automatically generated shopping lists from recipes",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099134/pexels-photo-4099134.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/shopping-list.png",
 		},
 		{
 			id: 5,
@@ -65,7 +65,7 @@ const Gallery = () => {
 			title: "Weekly Digest",
 			description: "Personalized recipe recommendations every week",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099141/pexels-photo-4099141.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/weekly-digest.png",
 		},
 		{
 			id: 6,
@@ -73,7 +73,7 @@ const Gallery = () => {
 			title: "RecipEase Logo",
 			description: "Official RecipEase brand logo and variations",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099237/pexels-photo-4099237.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/logo.png",
 		},
 		{
 			id: 7,
@@ -81,7 +81,7 @@ const Gallery = () => {
 			title: "Cross-Platform Sync",
 			description: "Access recipes across all your devices",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099239/pexels-photo-4099239.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/sync.png",
 		},
 		{
 			id: 8,
@@ -89,7 +89,7 @@ const Gallery = () => {
 			title: "Recipe Detail View",
 			description: "Beautiful, interactive recipe display",
 			type: "image",
-			url: "https://images.pexels.com/photos/4099240/pexels-photo-4099240.jpeg?auto=compress&cs=tinysrgb&w=800",
+			url: "/images/gallery/recipe-detail.png",
 		},
 	];
 
@@ -128,7 +128,7 @@ const Gallery = () => {
 								onClick={() => setActiveCategory(category.id)}
 								className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${
 									activeCategory === category.id
-										? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
+										? "bg-orange-500 text-white shadow-lg"
 										: "bg-gray-100 text-gray-700 hover:bg-gray-200"
 								}`}
 							>
@@ -203,7 +203,7 @@ const Gallery = () => {
 			{/* Download Media Kit */}
 			<section className="py-20 bg-white">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-12 text-center text-white">
+					<div className="bg-orange-500 rounded-2xl p-12 text-center text-white">
 						<div className="space-y-6">
 							<h2 className="text-3xl font-bold">Download Media Kit</h2>
 							<p className="text-xl text-orange-100">

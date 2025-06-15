@@ -1,4 +1,4 @@
-import { Target, Heart, Users, Award, ChefHat, Globe } from "lucide-react";
+import { Target, Heart, Users, Award, Globe } from "lucide-react";
 
 const About = () => {
 	const values = [
@@ -65,61 +65,47 @@ const About = () => {
 	return (
 		<div className="py-16">
 			{/* Hero Section */}
-			<section className="bg-gradient-to-br from-orange-50 via-white to-green-50 py-20">
-				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<h1 className="text-5xl font-bold text-gray-900 mb-6">
-						About
-						<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-							{" "}
-							RecipEase
-						</span>
-					</h1>
-					<p className="text-xl text-gray-600 leading-relaxed">
-						We're on a mission to revolutionize home cooking by making it
-						easier, more creative, and more enjoyable for everyone through the
-						power of artificial intelligence.
-					</p>
-				</div>
-			</section>
-
-			{/* Mission Statement */}
-			<section className="py-20 bg-white">
-				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<section className="bg-secondary-light py-20">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 						<div className="space-y-6">
-							<h2 className="text-4xl font-bold text-gray-900">Our Mission</h2>
-							<p className="text-lg text-gray-600 leading-relaxed">
+							<h2 className="text-4xl font-bold text-heading">Our Mission</h2>
+							<p className="text-lg text-body leading-relaxed">
 								At RecipEase, we believe that everyone deserves to enjoy
 								delicious, home-cooked meals regardless of their cooking
 								experience or busy lifestyle. Our AI-powered platform transforms
 								the way people discover, create, and organize recipes.
 							</p>
-							<p className="text-lg text-gray-600 leading-relaxed">
+							<p className="text-lg text-body leading-relaxed">
 								We're not just building an app – we're creating a culinary
 								companion that learns your preferences, understands your dietary
 								needs, and helps you become a more confident cook.
 							</p>
 							<div className="flex items-center space-x-4">
-								<div className="bg-orange-500 text-white p-3 rounded-full">
-									<ChefHat className="h-6 w-6" />
+								<div className="bg-primary text-white p-3 rounded-full">
+									<img
+										src="/icons/logo.png"
+										alt="RecipEase Logo"
+										className="h-8 w-8"
+									/>
 								</div>
-								<span className="text-lg font-semibold text-gray-900">
+								<span className="text-lg font-semibold text-heading">
 									Empowering home chefs worldwide
 								</span>
 							</div>
 						</div>
-						<div className="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl p-8">
-							<div className="bg-white rounded-xl p-6 shadow-lg text-center">
-								<h3 className="text-2xl font-bold text-gray-900 mb-4">
+						<div className="bg-gradient-to-br from-secondary-warm to-secondary-light rounded-2xl p-8">
+							<div className="bg-card rounded-xl p-6 shadow-lg text-center">
+								<h3 className="text-2xl font-bold text-heading mb-4">
 									Our Impact
 								</h3>
 								<div className="grid grid-cols-2 gap-6">
 									{stats.map((stat, index) => (
 										<div key={index} className="space-y-2">
-											<div className="text-3xl font-bold text-orange-500">
+											<div className="text-3xl font-bold text-primary">
 												{stat.number}
 											</div>
-											<div className="text-gray-600">{stat.label}</div>
+											<div className="text-body">{stat.label}</div>
 										</div>
 									))}
 								</div>
@@ -130,7 +116,7 @@ const About = () => {
 			</section>
 
 			{/* Values */}
-			<section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+			<section className="py-20 bg-white">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center space-y-4 mb-16">
 						<h2 className="text-4xl font-bold text-gray-900">Our Values</h2>
@@ -212,7 +198,7 @@ const About = () => {
 			</section>
 
 			{/* Timeline */}
-			<section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+			<section className="py-20 bg-white">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center space-y-4 mb-16">
 						<h2 className="text-4xl font-bold text-gray-900">Our Journey</h2>
@@ -240,7 +226,7 @@ const About = () => {
 			</section>
 
 			{/* CTA Section */}
-			<section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+			<section className="py-20 bg-orange-500">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<div className="space-y-8">
 						<h2 className="text-4xl font-bold text-white">

@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Mail, MessageCircle, FileText, HelpCircle } from "lucide-react";
+import {
+	Mail,
+	MessageCircle,
+	FileText,
+	HelpCircle,
+	Headset,
+	HelpCircle as HelpOutline,
+	CreditCard,
+	Building2,
+} from "lucide-react";
 
 const Support = () => {
 	const [formData, setFormData] = useState({
@@ -23,8 +32,39 @@ const Support = () => {
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		// Handle form submission
-		console.log("Form submitted:", formData);
+
+		// Create email subject based on category
+		const categorySubjects = {
+			general: "General Question - RecipEase",
+			technical: "Technical Issue - RecipEase",
+			billing: "Billing Inquiry - RecipEase",
+			feature: "Feature Request - RecipEase",
+			bug: "Bug Report - RecipEase",
+		};
+
+		// Determine which email to send to based on category
+		const categoryEmails = {
+			general: "hello@recipease.kitchen",
+			technical: "support@recipease.kitchen",
+			billing: "billing@adventhubsolutions.com",
+			feature: "hello@recipease.kitchen",
+			bug: "support@recipease.kitchen",
+		};
+
+		const emailSubject =
+			categorySubjects[formData.category as keyof typeof categorySubjects];
+		const emailTo =
+			categoryEmails[formData.category as keyof typeof categoryEmails];
+
+		// Create email body with form data
+		const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+
+		// Open default email client with pre-filled information
+		const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(
+			emailSubject
+		)}&body=${encodeURIComponent(emailBody)}`;
+		window.location.href = mailtoLink;
+
 		// Reset form
 		setFormData({
 			name: "",
@@ -37,25 +77,44 @@ const Support = () => {
 
 	const supportOptions = [
 		{
-			icon: <Mail className="h-12 w-12 text-orange-500" />,
-			title: "Email Support",
-			description: "Get help via email with detailed responses",
+			icon: <Headset className="h-12 w-12 text-orange-500" />,
+			title: "Customer Support",
+			description: "Get help with app issues",
 			contact: "support@recipease.kitchen",
 			responseTime: "Within 24 hours",
+			emailSubject: "Customer Support - RecipEase",
+			emailBody:
+				"Hi RecipEase Support Team,\n\nI need help with...\n\nThank you!\n",
 		},
 		{
-			icon: <MessageCircle className="h-12 w-12 text-green-500" />,
-			title: "Live Chat",
-			description: "Chat with our support team in real-time",
-			contact: "Available in app",
-			responseTime: "Instant response",
+			icon: <HelpOutline className="h-12 w-12 text-blue-500" />,
+			title: "General Inquiries",
+			description: "Questions about RecipEase",
+			contact: "hello@recipease.kitchen",
+			responseTime: "Within 48 hours",
+			emailSubject: "General Inquiry - RecipEase",
+			emailBody:
+				"Hello RecipEase Team,\n\nI would like to know...\n\nThank you!\n",
 		},
 		{
-			icon: <FileText className="h-12 w-12 text-blue-500" />,
-			title: "Help Center",
-			description: "Browse our comprehensive knowledge base",
-			contact: "Self-service articles",
-			responseTime: "Immediate access",
+			icon: <CreditCard className="h-12 w-12 text-green-500" />,
+			title: "Billing Support",
+			description: "Payments and invoices",
+			contact: "billing@adventhubsolutions.com",
+			responseTime: "Within 24 hours",
+			emailSubject: "Billing Inquiry - RecipEase",
+			emailBody:
+				"Hello Billing Team,\n\nI have a question about...\n\nThank you!\n",
+		},
+		{
+			icon: <Building2 className="h-12 w-12 text-purple-500" />,
+			title: "Business Inquiries",
+			description: "Partnerships and collaborations",
+			contact: "partnerships@adventhubsolutions.com",
+			responseTime: "Within 48 hours",
+			emailSubject: "Business Inquiry - RecipEase",
+			emailBody:
+				"Hello Business Team,\n\nI am interested in...\n\nThank you!\n",
 		},
 	];
 
@@ -92,6 +151,13 @@ const Support = () => {
 		},
 	];
 
+	const handleEmailClick = (email: string, subject: string, body: string) => {
+		const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+			subject
+		)}&body=${encodeURIComponent(body)}`;
+		window.location.href = mailtoLink;
+	};
+
 	return (
 		<div className="py-16">
 			{/* Hero Section */}
@@ -123,28 +189,38 @@ const Support = () => {
 						</p>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						{supportOptions.map((option, index) => (
 							<div
 								key={index}
-								className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 text-center"
+								className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
 							>
 								<div className="space-y-4">
-									<div className="flex justify-center">{option.icon}</div>
-									<h3 className="text-xl font-bold text-gray-900">
-										{option.title}
-									</h3>
-									<p className="text-gray-600">{option.description}</p>
+									<div className="flex items-center space-x-4">
+										<div className="flex-shrink-0">{option.icon}</div>
+										<div>
+											<h3 className="text-xl font-bold text-gray-900">
+												{option.title}
+											</h3>
+											<p className="text-gray-600">{option.description}</p>
+										</div>
+									</div>
 									<div className="space-y-2">
-										<p className="font-semibold text-gray-900">
-											{option.contact}
-										</p>
 										<p className="text-sm text-gray-500">
 											{option.responseTime}
 										</p>
 									</div>
-									<button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105">
-										Get Help
+									<button
+										onClick={() =>
+											handleEmailClick(
+												option.contact,
+												option.emailSubject,
+												option.emailBody
+											)
+										}
+										className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105"
+									>
+										Send Email
 									</button>
 								</div>
 							</div>
@@ -154,7 +230,7 @@ const Support = () => {
 			</section>
 
 			{/* Contact Form */}
-			<section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+			<section className="py-20 bg-white">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center space-y-4 mb-16">
 						<h2 className="text-4xl font-bold text-gray-900">

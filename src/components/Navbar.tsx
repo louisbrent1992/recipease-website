@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChefHat } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +16,19 @@ const Navbar = () => {
 	];
 
 	return (
-		<nav className="bg-white shadow-lg sticky top-0 z-50">
+		<nav className="bg-card shadow-lg sticky top-0 z-50">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between h-16">
 					<div className="flex items-center">
 						<Link
 							to="/"
-							className="flex items-center space-x-2 text-2xl font-bold text-orange-600"
+							className="flex items-center space-x-2 text-2xl font-bold text-primary"
 						>
-							<ChefHat className="h-8 w-8" />
+							<img
+								src="/icons/logo.png"
+								alt="RecipEase Logo"
+								className="h-10 w-10"
+							/>
 							<span>RecipEase</span>
 						</Link>
 					</div>
@@ -37,8 +41,8 @@ const Navbar = () => {
 								to={item.href}
 								className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
 									location.pathname === item.href
-										? "text-orange-600 border-b-2 border-orange-600"
-										: "text-gray-700 hover:text-orange-600"
+										? "text-primary border-b-2 border-primary"
+										: "text-body hover:text-primary"
 								}`}
 							>
 								{item.name}
@@ -46,7 +50,7 @@ const Navbar = () => {
 						))}
 						<a
 							href="#"
-							className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105"
+							className="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
 						>
 							Download App
 						</a>

@@ -234,7 +234,7 @@ const Home = () => {
 			</section>
 
 			{/* CTA Section */}
-			<section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+			<section className="py-20 bg-orange-500">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<div className="space-y-8">
 						<h2 className="text-4xl font-bold text-white">

@@ -39,7 +39,7 @@ const Privacy = () => {
 			</section>
 
 			{/* Privacy Highlights */}
-			<section className="py-16">
+			<section className="py-20 bg-white">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
 						{highlights.map((item, index) => (
@@ -161,10 +161,10 @@ const Privacy = () => {
 								<p>
 									To exercise these rights, please contact us at{" "}
 									<a
-										href="mailto:privacy@recipease.kitchen"
+										href="mailto:admin@recipease.kitchen"
 										className="text-orange-500 hover:underline"
 									>
-										privacy@recipease.kitchen
+										admin@recipease.kitchen
 									</a>
 								</p>
 							</div>
@@ -220,13 +220,13 @@ const Privacy = () => {
 								</p>
 								<div className="bg-gray-50 p-4 rounded-lg">
 									<p>
-										<strong>Email:</strong> privacy@recipease.kitchen
+										<strong>Email:</strong> admin@recipease.kitchen
 									</p>
 									<p>
 										<strong>Company:</strong> Advent Hub Solutions
 									</p>
 									<p>
-										<strong>Address:</strong> San Francisco, California
+										<strong>Address:</strong> Los Angeles, California
 									</p>
 								</div>
 							</div>
