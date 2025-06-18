@@ -90,7 +90,7 @@ const About = () => {
 									/>
 								</div>
 								<span className="text-lg font-semibold text-heading">
-									Empowering home chefs worldwide
+									Empowering home chefs worldwide.
 								</span>
 							</div>
 						</div>
@@ -189,7 +189,7 @@ const About = () => {
 								</div>
 								<div>
 									<h4 className="font-semibold text-gray-900">Headquarters</h4>
-									<p className="text-gray-600">San Francisco, California</p>
+									<p className="text-gray-600">Los Angeles, California</p>
 								</div>
 							</div>
 						</div>
