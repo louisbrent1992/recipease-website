@@ -4,22 +4,22 @@ import { Target, Heart, Users, Award, ChefHat, Globe } from 'lucide-react';
 const About = () => {
   const values = [
     {
-      icon: <Heart className="h-12 w-12 text-red-500" />,
+      icon: <Heart className="h-12 w-12 text-theme-primary" />,
       title: 'Passion for Cooking',
       description: 'We believe cooking should be joyful, creative, and accessible to everyone, regardless of skill level.'
     },
     {
-      icon: <Users className="h-12 w-12 text-blue-500" />,
+      icon: <Users className="h-12 w-12 text-theme-secondary" />,
       title: 'Community First',
       description: 'Our users are at the heart of everything we do. We build features based on real needs and feedback.'
     },
     {
-      icon: <Target className="h-12 w-12 text-green-500" />,
+      icon: <Target className="h-12 w-12 text-theme-accent" />,
       title: 'Innovation',
       description: 'We harness cutting-edge intelligent technology to solve real problems and enhance the cooking experience.'
     },
     {
-      icon: <Globe className="h-12 w-12 text-purple-500" />,
+      icon: <Globe className="h-12 w-12 text-theme-purple" />,
       title: 'Accessibility',
       description: 'Great food and cooking knowledge should be available to everyone, everywhere.'
     }
@@ -62,7 +62,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             About
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500"> RecipEase</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> RecipEase</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             We're on a mission to revolutionize home cooking by making it easier, more creative, 
@@ -87,7 +87,7 @@ const About = () => {
                 understands your dietary needs, and helps you become a more confident cook.
               </p>
               <div className="flex items-center space-x-4">
-                <div className="bg-orange-500 text-white p-3 rounded-full">
+                <div className="bg-theme-primary text-white p-3 rounded-full">
                   <ChefHat className="h-6 w-6" />
                 </div>
                 <span className="text-lg font-semibold text-gray-900">
@@ -95,13 +95,13 @@ const About = () => {
                 </span>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-theme-background to-theme-neutral rounded-2xl p-8">
               <div className="bg-white rounded-xl p-6 shadow-lg text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Impact</h3>
                 <div className="grid grid-cols-2 gap-6">
                   {stats.map((stat, index) => (
                     <div key={index} className="space-y-2">
-                      <div className="text-3xl font-bold text-orange-500">{stat.number}</div>
+                      <div className="text-3xl font-bold text-theme-primary">{stat.number}</div>
                       <div className="text-gray-600">{stat.label}</div>
                     </div>
                   ))}
@@ -140,9 +140,9 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8">
               <div className="text-center space-y-6">
-                <div className="bg-orange-500 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                <div className="bg-theme-primary text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
                   <Award className="h-8 w-8" />
                 </div>
                 <div>
@@ -192,7 +192,7 @@ const About = () => {
           <div className="space-y-8">
             {timeline.map((item, index) => (
               <div key={index} className="flex items-start space-x-6">
-                <div className="bg-orange-500 text-white p-3 rounded-full font-bold min-w-[4rem] text-center">
+                <div className="bg-theme-primary text-white p-3 rounded-full font-bold min-w-[4rem] text-center">
                   {item.year}
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-lg flex-1">
@@ -206,18 +206,18 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-20 bg-gradient-to-r from-theme-primary to-theme-primary-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-white">Join Our Culinary Revolution</h2>
-            <p className="text-xl text-orange-100">
+            <p className="text-xl text-white/90">
               Be part of a community that's transforming the way the world cooks, one recipe at a time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button className="bg-white text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
                 Download RecipEase
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-500 transition-all duration-200">
+              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-theme-primary transition-all duration-200">
                 Contact Us
               </button>
             </div>

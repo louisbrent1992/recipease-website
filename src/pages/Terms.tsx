@@ -4,22 +4,22 @@ import { FileText, Scale, Shield, AlertCircle } from 'lucide-react';
 const Terms = () => {
   const highlights = [
     {
-      icon: <FileText className="h-8 w-8 text-blue-500" />,
+      icon: <FileText className="h-8 w-8 text-theme-secondary" />,
       title: 'Clear Terms',
       description: 'Straightforward terms and conditions for using RecipEase'
     },
     {
-      icon: <Scale className="h-8 w-8 text-green-500" />,
+      icon: <Scale className="h-8 w-8 text-theme-accent" />,
       title: 'Fair Use',
       description: 'Reasonable usage policies that protect all users'
     },
     {
-      icon: <Shield className="h-8 w-8 text-purple-500" />,
+      icon: <Shield className="h-8 w-8 text-theme-purple" />,
       title: 'User Protection',
       description: 'Policies designed to protect your rights and data'
     },
     {
-      icon: <AlertCircle className="h-8 w-8 text-orange-500" />,
+      icon: <AlertCircle className="h-8 w-8 text-theme-primary" />,
       title: 'Regular Updates',
       description: 'Terms are regularly reviewed and updated for clarity'
     }

@@ -1,37 +1,37 @@
 import React from 'react';
-import { Star, Download, Smartphone, Brain, Users, BookOpen, Calendar, ShoppingCart } from 'lucide-react';
+import { Star, Download, Smartphone, Brain, Users, BookOpen, Calendar } from 'lucide-react';
 
 const Home = () => {
   const features = [
     {
-      icon: <Brain className="h-12 w-12 text-orange-500" />,
-      title: "Smart Recipe Generation",
-      description: "Create unique recipes based on your preferences and dietary needs with our advanced intelligent technology."
+      icon: <Brain className="h-12 w-12 text-theme-primary" />,
+      title: "AI-Powered Recipe Generation",
+      description: "Generate unique, personalized recipes using AI. Specify ingredients, dietary restrictions, cuisine types, cooking time, and difficulty level."
     },
     {
-      icon: <BookOpen className="h-12 w-12 text-green-500" />,
-      title: "Import Recipes from Social & Web",
-      description: "Easily import and format recipes from your favorite social media platforms and websites."
+      icon: <BookOpen className="h-12 w-12 text-theme-accent" />,
+      title: "Import from Social Media & Web",
+      description: "One-tap import from Instagram, TikTok, YouTube, Food Network, BBC Food, AllRecipes, and more. AI automatically extracts and structures recipe data."
     },
     {
-      icon: <Users className="h-12 w-12 text-blue-500" />,
-      title: "Save & Organize Recipes",
-      description: "Keep all your favorite recipes organized in one place with smart categorization and search."
+      icon: <Users className="h-12 w-12 text-theme-secondary" />,
+      title: "Smart Recipe Collections",
+      description: "Create unlimited custom collections with automatic color and icon assignment. Organize by meal type, cuisine, occasion, or custom categories."
     },
     {
-      icon: <Calendar className="h-12 w-12 text-purple-500" />,
-      title: "Weekly Recipe Digest",
-      description: "Get personalized recipe recommendations delivered to your inbox every week."
+      icon: <Calendar className="h-12 w-12 text-theme-purple" />,
+      title: "Smart Notifications",
+      description: "Daily inspiration, meal prep Sunday, seasonal recipes, quick meals, budget-friendly options, and keto spotlight - all customizable."
     },
     {
-      icon: <ShoppingCart className="h-12 w-12 text-red-500" />,
-      title: "Smart Shopping List",
-      description: "Automatically generate shopping lists from your selected recipes with smart ingredient grouping."
+      icon: <Smartphone className="h-12 w-12 text-theme-primary" />,
+      title: "Advanced Search & Discovery",
+      description: "Search by ingredients, dietary tags, cuisine type, difficulty, and cooking time. Smart tag system with multi-tag filtering."
     },
     {
-      icon: <Smartphone className="h-12 w-12 text-indigo-500" />,
-      title: "Cross-Platform Sync",
-      description: "Access your recipes anywhere with seamless synchronization across all your devices."
+      icon: <Star className="h-12 w-12 text-theme-secondary" />,
+      title: "Free Welcome Bonus",
+      description: "Start with 5 free recipe imports and 5 free recipe generations. No credit card required. Credits never expire."
     }
   ];
 
@@ -66,24 +66,24 @@ const Home = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-2 w-fit">
                   <img src="/logo.png" alt="RecipEase" className="h-12 w-12" />
-                  <span className="text-lg font-semibold text-orange-600">RecipEase</span>
+                  <span className="text-lg font-semibold text-theme-primary">RecipEase</span>
                 </div>
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Your Personal
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500"> Smart</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Smart</span>
                   <br />Recipe Assistant
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Create, import, and organize recipes with intelligent technology. Join thousands of home chefs who've revolutionized their cooking experience.
+                  AI-powered recipe generation, social media imports, smart collections, and advanced discovery. Start free with 5 imports and 5 generations - no credit card required.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
+                <button className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
                   <Download className="h-5 w-5" />
                   <span>Download on Google Play</span>
                 </button>
-                <button className="border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-500 hover:text-white transition-all duration-200">
+                <button className="border-2 border-theme-primary text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-theme-primary hover:text-white transition-all duration-200">
                   Watch Demo
                 </button>
               </div>
@@ -105,23 +105,23 @@ const Home = () => {
             </div>
 
             <div className="relative">
-              <div className="relative bg-gradient-to-br from-orange-100 to-red-100 rounded-3xl p-8 shadow-2xl">
+              <div className="relative bg-gradient-to-br from-theme-background to-theme-neutral rounded-3xl p-8 shadow-2xl">
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="text-center space-y-4">
-                    <div className="bg-orange-500 text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                    <div className="bg-theme-primary text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
                       <Brain className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Smart Recipe Generator</h3>
-                    <p className="text-gray-600">Enter your ingredients and preferences to get personalized recipe suggestions</p>
+                    <h3 className="text-xl font-bold text-gray-900">AI Recipe Generator</h3>
+                    <p className="text-gray-600">Generate personalized recipes with custom ingredients, dietary restrictions, and preferences</p>
                     <div className="bg-gray-50 rounded-lg p-4 text-left">
-                      <div className="text-sm text-gray-500 mb-2">Ingredients: chicken, broccoli, rice</div>
-                      <div className="text-sm font-medium text-gray-900">Suggested: Teriyaki Chicken Bowl</div>
+                      <div className="text-sm text-gray-500 mb-2">Input: chicken, gluten-free, 30 min</div>
+                      <div className="text-sm font-medium text-gray-900">Generated: Gluten-Free Chicken Stir-Fry</div>
                     </div>
                   </div>
                 </div>
                 
               </div>
-              <div className="absolute -top-4 -right-4 bg-green-500 text-white p-3 rounded-full shadow-lg">
+              <div className="absolute -top-4 -right-4 bg-theme-accent text-white p-3 rounded-full shadow-lg">
                 <Star className="h-6 w-6 fill-current" />
               </div>
             </div>
@@ -183,14 +183,14 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-20 bg-gradient-to-r from-theme-primary to-theme-primary-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-white">Ready to Transform Your Cooking?</h2>
-            <p className="text-xl text-orange-100">
+            <p className="text-xl text-white/90">
               Join thousands of home chefs who have already discovered the joy of cooking with RecipEase.
             </p>
-            <button className="bg-white text-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 mx-auto">
+            <button className="bg-white text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 mx-auto">
               <Download className="h-5 w-5" />
               <span>Download Free Today</span>
             </button>

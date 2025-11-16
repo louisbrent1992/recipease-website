@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Download, Image, Video, Smartphone, Monitor, Tablet } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Download, Image, Video, Smartphone, Monitor, Tablet, X, Maximize2 } from 'lucide-react';
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [expandedImage, setExpandedImage] = useState<{ url: string; title: string; description: string; category: string } | null>(null);
 
   const categories = [
     { id: 'all', name: 'All Media', icon: <Image className="h-4 w-4" /> },
@@ -18,7 +19,7 @@ const Gallery = () => {
       title: 'Recipe Import Screen',
       description: 'Seamlessly import recipes from social media and websites',
       type: 'image',
-      url: 'https://images.pexels.com/photos/4099235/pexels-photo-4099235.jpeg?auto=compress&cs=tinysrgb&w=800'
+      url: '/screenshots/recipe_import.png'
     },
     {
       id: 2,
@@ -26,15 +27,15 @@ const Gallery = () => {
       title: 'AI Recipe Generator',
       description: 'Generate personalized recipes with AI technology',
       type: 'image',
-      url: 'https://images.pexels.com/photos/4099238/pexels-photo-4099238.jpeg?auto=compress&cs=tinysrgb&w=800'
+      url: '/screenshots/recipe_generator.png'
     },
     {
       id: 3,
       category: 'screenshots',
-      title: 'Recipe Collection',
+      title: 'Recipe Collections',
       description: 'Organize and manage your recipe collection',
       type: 'image',
-      url: 'https://images.pexels.com/photos/4099236/pexels-photo-4099236.jpeg?auto=compress&cs=tinysrgb&w=800'
+      url: '/screenshots/recipe_collections.png'
     },
     {
       id: 4,
@@ -58,7 +59,7 @@ const Gallery = () => {
       title: 'RecipEase Logo',
       description: 'Official RecipEase brand logo and variations',
       type: 'image',
-      url: 'https://images.pexels.com/photos/4099237/pexels-photo-4099237.jpeg?auto=compress&cs=tinysrgb&w=800'
+      url: '/logo.png'
     },
     {
       id: 7,
@@ -74,13 +75,36 @@ const Gallery = () => {
       title: 'Recipe Detail View',
       description: 'Beautiful, interactive recipe display',
       type: 'image',
-      url: 'https://images.pexels.com/photos/4099240/pexels-photo-4099240.jpeg?auto=compress&cs=tinysrgb&w=800'
+      url: '/screenshots/recipe_details.png'
     }
   ];
 
   const filteredItems = activeCategory === 'all' 
     ? mediaItems 
     : mediaItems.filter(item => item.category === activeCategory);
+
+  // Close modal on ESC key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && expandedImage) {
+        setExpandedImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [expandedImage]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (expandedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [expandedImage]);
 
   return (
     <div className="py-16">
@@ -89,7 +113,7 @@ const Gallery = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Media
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500"> Gallery</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Gallery</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Explore RecipEase through screenshots, feature graphics, and brand assets. 
@@ -109,7 +133,7 @@ const Gallery = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${
                   activeCategory === category.id
-                    ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -126,17 +150,21 @@ const Gallery = () => {
                 key={item.id}
                 className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
-                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
+                <div 
+                  className="bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden flex items-center justify-center cursor-pointer rounded-lg"
+                  onClick={() => setExpandedImage({ url: item.url, title: item.title, description: item.description, category: item.category })}
+                  style={{ minHeight: '200px', maxHeight: '400px' }}
+                >
                   <img
                     src={item.url}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button className="bg-white text-gray-900 p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
-                        <Download className="h-5 w-5" />
-                      </button>
+                      <div className="bg-white text-gray-900 p-3 rounded-full shadow-lg">
+                        <Maximize2 className="h-5 w-5" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -166,7 +194,7 @@ const Gallery = () => {
                 <Video className="h-16 w-16 text-white mx-auto" />
                 <h3 className="text-2xl font-bold text-white">Coming Soon</h3>
                 <p className="text-gray-300">Full app walkthrough video will be available here</p>
-                <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200">
+                <button className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-6 py-3 rounded-full font-semibold hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200">
                   Watch Preview
                 </button>
               </div>
@@ -178,18 +206,18 @@ const Gallery = () => {
       {/* Download Media Kit */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-12 text-center text-white">
+          <div className="bg-gradient-to-r from-theme-primary to-theme-primary-dark rounded-2xl p-12 text-center text-white">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">Download Media Kit</h2>
-              <p className="text-xl text-orange-100">
+              <p className="text-xl text-white/90">
                 Get high-resolution logos, screenshots, and brand assets for press and media coverage.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 flex items-center justify-center space-x-2">
+                <button className="bg-white text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 flex items-center justify-center space-x-2">
                   <Download className="h-5 w-5" />
                   <span>Download High-Res Assets</span>
                 </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-500 transition-all duration-200">
+                <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-theme-primary transition-all duration-200">
                   Brand Guidelines
                 </button>
               </div>
@@ -197,6 +225,37 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Modal/Lightbox */}
+      {expandedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-sm"
+          onClick={() => setExpandedImage(null)}
+        >
+          <div 
+            className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setExpandedImage(null)}
+              className="absolute top-4 right-4 z-10 bg-white text-gray-900 p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
+              aria-label="Close"
+            >
+              <X className="h-6 w-6" />
+            </button>
+
+            {/* Expanded Image */}
+            <div className="flex items-center justify-center max-w-full max-h-full">
+              <img
+                src={expandedImage.url}
+                alt={expandedImage.title}
+                className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

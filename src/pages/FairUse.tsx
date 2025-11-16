@@ -4,7 +4,7 @@ import { Scale, Shield, Users, AlertTriangle, CheckCircle, XCircle } from 'lucid
 const FairUse = () => {
   const usageGuidelines = [
     {
-      icon: <CheckCircle className="h-8 w-8 text-green-500" />,
+      icon: <CheckCircle className="h-8 w-8 text-theme-accent" />,
       title: 'Acceptable Use',
       items: [
         'Personal recipe creation and management',
@@ -76,7 +76,7 @@ const FairUse = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="text-center mb-8">
-              <Scale className="h-16 w-16 text-orange-500 mx-auto mb-4" />
+              <Scale className="h-16 w-16 text-theme-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Fair Use Commitment</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 RecipEase is designed to enhance your cooking experience while respecting the rights of content creators 
@@ -109,7 +109,7 @@ const FairUse = () => {
                   {section.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start space-x-3">
                       <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                        section.title === 'Acceptable Use' ? 'bg-green-500' : 'bg-red-500'
+                        section.title === 'Acceptable Use' ? 'bg-theme-accent' : 'bg-red-500'
                       }`}></div>
                       <span className="text-gray-700">{item}</span>
                     </li>
@@ -138,7 +138,7 @@ const FairUse = () => {
                 <ul className="space-y-3">
                   {tier.limits.map((limit, limitIndex) => (
                     <li key={limitIndex} className="flex items-start space-x-3">
-                      <div className="bg-orange-500 rounded-full p-1 mt-1.5">
+                      <div className="bg-theme-primary rounded-full p-1 mt-1.5">
                         <div className="w-2 h-2 bg-white rounded-full"></div>
                       </div>
                       <span className="text-gray-700">{limit}</span>
@@ -298,18 +298,18 @@ const FairUse = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-16 bg-gradient-to-r from-theme-primary to-theme-primary-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Questions About Fair Use?</h2>
-            <p className="text-xl text-orange-100">
+            <p className="text-xl text-white/90">
               Our support team is here to help clarify any questions about acceptable usage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button className="bg-white text-theme-primary px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
                 Contact Support
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-500 transition-all duration-200">
+              <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-theme-primary transition-all duration-200">
                 View Terms of Service
               </button>
             </div>

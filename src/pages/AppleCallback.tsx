@@ -106,7 +106,7 @@ const AppleCallback = () => {
           <div className="mb-8">
             {status === 'loading' && (
               <div className="space-y-4">
-                <Loader className="h-12 w-12 text-orange-500 mx-auto animate-spin" />
+                <Loader className="h-12 w-12 text-theme-primary mx-auto animate-spin" />
                 <p className="text-gray-600">Processing your sign in...</p>
               </div>
             )}
@@ -136,7 +136,7 @@ const AppleCallback = () => {
             {status === 'error' && (
               <button
                 onClick={handleRetry}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-6 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200"
+                className="w-full bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white py-3 px-6 rounded-full font-semibold hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200"
               >
                 Try Again
               </button>
@@ -144,7 +144,7 @@ const AppleCallback = () => {
             
             <button
               onClick={handleCloseWindow}
-              className="w-full border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-full font-semibold hover:border-orange-500 hover:text-orange-500 transition-all duration-200"
+              className="w-full border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-full font-semibold hover:border-theme-primary hover:text-theme-primary transition-all duration-200"
             >
               {status === 'success' ? 'Continue to App' : 'Close'}
             </button>
@@ -153,7 +153,7 @@ const AppleCallback = () => {
           <div className="mt-6 pt-6 border-t border-gray-200">
             <p className="text-xs text-gray-500">
               Having trouble? Contact our support team at{' '}
-              <a href="mailto:support@recipease.kitchen" className="text-orange-500 hover:underline">
+              <a href="mailto:support@recipease.kitchen" className="text-theme-primary hover:underline">
                 support@recipease.kitchen
               </a>
             </p>
@@ -163,7 +163,7 @@ const AppleCallback = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-500">
             Powered by{' '}
-            <span className="font-semibold text-orange-500">RecipEase</span>
+            <span className="font-semibold text-theme-primary">RecipEase</span>
           </p>
         </div>
       </div>

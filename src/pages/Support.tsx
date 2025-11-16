@@ -33,21 +33,21 @@ const Support = () => {
 
   const supportOptions = [
     {
-      icon: <Mail className="h-12 w-12 text-orange-500" />,
+      icon: <Mail className="h-12 w-12 text-theme-primary" />,
       title: 'Email Support',
       description: 'Get help via email with detailed responses',
       contact: 'support@recipease.kitchen',
       responseTime: 'Within 24 hours'
     },
     {
-      icon: <MessageCircle className="h-12 w-12 text-green-500" />,
+      icon: <MessageCircle className="h-12 w-12 text-theme-accent" />,
       title: 'Live Chat (Coming Soon)',
       description: 'Chat with our support team in real-time',
       contact: 'Available in app',
       responseTime: 'Instant response'
     },
     {
-      icon: <FileText className="h-12 w-12 text-blue-500" />,
+      icon: <FileText className="h-12 w-12 text-theme-secondary" />,
       title: 'Help Center',
       description: 'Browse our comprehensive knowledge base',
       contact: 'Self-service articles',
@@ -89,7 +89,7 @@ const Support = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             We're Here to
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500"> Help</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Help</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             Get the support you need to make the most of RecipEase. Our team is ready to assist you with any questions or issues.
@@ -118,7 +118,7 @@ const Support = () => {
                     <p className="font-semibold text-gray-900">{option.contact}</p>
                     <p className="text-sm text-gray-500">{option.responseTime}</p>
                   </div>
-                  <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-6 py-3 rounded-full font-semibold hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105">
                     Get Help
                   </button>
                 </div>
@@ -152,7 +152,7 @@ const Support = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-colors"
                     placeholder="Your full name"
                   />
                 </div>
@@ -167,7 +167,7 @@ const Support = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -183,7 +183,7 @@ const Support = () => {
                     name="category"
                     value={formData.category}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-colors"
                   >
                     <option value="general">General Question</option>
                     <option value="technical">Technical Issue</option>
@@ -203,7 +203,7 @@ const Support = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-colors"
                     placeholder="Brief description of your inquiry"
                   />
                 </div>
@@ -220,7 +220,7 @@ const Support = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-colors resize-none"
                   placeholder="Please provide as much detail as possible about your question or issue..."
                 ></textarea>
               </div>
@@ -228,7 +228,7 @@ const Support = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                  className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105 shadow-lg"
                 >
                   Send Message
                 </button>
@@ -253,7 +253,7 @@ const Support = () => {
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
                 <div className="flex items-start space-x-4">
                   <div className="bg-orange-100 p-2 rounded-full flex-shrink-0">
-                    <HelpCircle className="h-5 w-5 text-orange-500" />
+                    <HelpCircle className="h-5 w-5 text-theme-primary" />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold text-gray-900">{item.question}</h3>
@@ -267,18 +267,18 @@ const Support = () => {
       </section>
 
       {/* Additional Resources */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+      <section className="py-20 bg-gradient-to-r from-theme-primary to-theme-primary-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-white">Need More Help?</h2>
-            <p className="text-xl text-orange-100">
+            <p className="text-xl text-white/90">
               Explore our comprehensive help resources or connect with our community
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button className="bg-white text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
                 Browse Help Center
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-orange-500 transition-all duration-200">
+              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-theme-primary transition-all duration-200">
                 Join Community Forum
               </button>
             </div>

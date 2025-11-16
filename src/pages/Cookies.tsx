@@ -20,7 +20,7 @@ const Cookies = () => {
 
   const cookieTypes = [
     {
-      icon: <Shield className="h-8 w-8 text-green-500" />,
+      icon: <Shield className="h-8 w-8 text-theme-accent" />,
       title: 'Essential Cookies',
       description: 'Required for the website to function properly',
       purpose: 'Authentication, security, and core functionality',
@@ -28,7 +28,7 @@ const Cookies = () => {
       key: 'essential'
     },
     {
-      icon: <Info className="h-8 w-8 text-blue-500" />,
+      icon: <Info className="h-8 w-8 text-theme-secondary" />,
       title: 'Analytics Cookies',
       description: 'Help us understand how visitors interact with our website',
       purpose: 'Usage statistics, performance monitoring, and improvements',
@@ -36,7 +36,7 @@ const Cookies = () => {
       key: 'analytics'
     },
     {
-      icon: <Cookie className="h-8 w-8 text-orange-500" />,
+      icon: <Cookie className="h-8 w-8 text-theme-primary" />,
       title: 'Marketing Cookies',
       description: 'Used to deliver relevant advertisements and track campaigns',
       purpose: 'Targeted advertising and marketing effectiveness',
@@ -44,7 +44,7 @@ const Cookies = () => {
       key: 'marketing'
     },
     {
-      icon: <Settings className="h-8 w-8 text-purple-500" />,
+      icon: <Settings className="h-8 w-8 text-theme-purple" />,
       title: 'Personalization Cookies',
       description: 'Remember your preferences and provide customized experience',
       purpose: 'User preferences, language settings, and personalized content',
@@ -70,7 +70,7 @@ const Cookies = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="text-center mb-8">
-              <Cookie className="h-16 w-16 text-orange-500 mx-auto mb-4" />
+              <Cookie className="h-16 w-16 text-theme-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">What Are Cookies?</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Cookies are small text files that are stored on your device when you visit our website. 
@@ -109,7 +109,7 @@ const Cookies = () => {
                       <button
                         onClick={() => handleSettingChange(type.key)}
                         className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                          cookieSettings[type.key as keyof typeof cookieSettings] ? 'bg-orange-500' : 'bg-gray-300'
+                          cookieSettings[type.key as keyof typeof cookieSettings] ? 'bg-theme-primary' : 'bg-gray-300'
                         }`}
                       >
                         <span
@@ -132,7 +132,7 @@ const Cookies = () => {
           </div>
 
           <div className="text-center mt-8">
-            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105 shadow-lg">
+            <button className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-8 py-3 rounded-full font-semibold text-lg hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105 shadow-lg">
               Save Cookie Preferences
             </button>
           </div>

@@ -4,22 +4,22 @@ import { Shield, Eye, Lock, UserCheck } from 'lucide-react';
 const Privacy = () => {
   const highlights = [
     {
-      icon: <Shield className="h-8 w-8 text-green-500" />,
+      icon: <Shield className="h-8 w-8 text-theme-accent" />,
       title: 'Data Protection',
       description: 'Your personal information is encrypted and securely stored'
     },
     {
-      icon: <Eye className="h-8 w-8 text-blue-500" />,
+      icon: <Eye className="h-8 w-8 text-theme-secondary" />,
       title: 'No Data Selling',
       description: 'We never sell your personal data to third parties'
     },
     {
-      icon: <Lock className="h-8 w-8 text-purple-500" />,
+      icon: <Lock className="h-8 w-8 text-theme-purple" />,
       title: 'Secure Processing',
       description: 'All data processing follows industry security standards'
     },
     {
-      icon: <UserCheck className="h-8 w-8 text-orange-500" />,
+      icon: <UserCheck className="h-8 w-8 text-theme-primary" />,
       title: 'User Control',
       description: 'You have full control over your data and privacy settings'
     }
@@ -133,7 +133,7 @@ const Privacy = () => {
                 </ul>
                 <p>
                   To exercise these rights, please contact us at{' '}
-                  <a href="mailto:privacy@recipease.kitchen" className="text-orange-500 hover:underline">
+                  <a href="mailto:privacy@recipease.kitchen" className="text-theme-primary hover:underline">
                     privacy@recipease.kitchen
                   </a>
                 </p>
