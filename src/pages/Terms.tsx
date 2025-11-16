@@ -142,8 +142,12 @@ const Terms = () => {
                 </p>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>Free accounts have limited features and usage quotas</li>
-                  <li>Premium subscriptions provide unlimited access to all features</li>
+                  <li>Premium subscriptions provide access to premium features with monthly credit allocations</li>
+                  <li>Recipe import credits and recipe generation credits are separate and cannot be interchanged</li>
                   <li>Subscriptions auto-renew unless cancelled</li>
+                  <li>We offer a 3-day grace period for payment issues</li>
+                  <li>You can upgrade or downgrade your subscription plan anytime</li>
+                  <li>Ad-free features are shareable with family members where applicable</li>
                   <li>Refunds are handled according to app store policies</li>
                   <li>We reserve the right to change pricing with notice</li>
                 </ul>

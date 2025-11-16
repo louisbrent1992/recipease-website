@@ -10,8 +10,8 @@ const Pricing = () => {
     price: 0,
     description: 'Perfect for trying RecipEase',
     features: [
-      '5 free recipe imports (welcome bonus)',
-      '5 free recipe generations (welcome bonus)',
+      '5 free recipe imports',
+      '5 free recipe generations',
       'Access to recipe discovery',
       'Basic recipe organization',
       'Standard recipe search',
@@ -20,7 +20,7 @@ const Pricing = () => {
     ],
     limitations: [
       'Ads supported',
-      'Limited to welcome bonus credits',
+      'Limited to 5 free credits',
       'Standard support'
     ],
     cta: 'Get Started Free',
@@ -106,11 +106,12 @@ const Pricing = () => {
       price: { monthly: 6.99, yearly: null },
       description: 'Perfect for regular cooking',
       features: [
-        '7-day free trial (unlimited during trial)',
-        '25 imports + 25 generations per month (50 total)',
+        '7-day free trial: UNLIMITED imports and generations (no credit limits!)',
+        'After trial: 25 recipe import credits per month',
+        'After trial: 25 recipe generation credits per month',
         'Ad-free experience',
         'Monthly credit refresh',
-        'Flexible credits (use for imports or generations)'
+        'Separate credit types (imports and generations cannot be interchanged)'
       ],
       limitations: [],
       cta: 'Start Free Trial',
@@ -123,12 +124,13 @@ const Pricing = () => {
       price: { monthly: null, yearly: 44.99 },
       description: 'Best value - Save 46%',
       features: [
-        '7-day free trial (unlimited during trial)',
-        '25 imports + 25 generations per month',
-        '600 total credits per year (300 + 300)',
+        '7-day free trial: UNLIMITED imports and generations (no credit limits!)',
+        'After trial: 25 recipe import credits per month',
+        'After trial: 25 recipe generation credits per month',
+        '300 import + 300 generation credits per year',
         'Ad-free experience',
         'Only $3.75/month equivalent',
-        'Flexible credits (use for imports or generations)'
+        'Separate credit types (imports and generations cannot be interchanged)'
       ],
       limitations: [],
       cta: 'Start Free Trial',
@@ -174,11 +176,11 @@ const Pricing = () => {
   const faqs = [
     {
       question: 'What is the welcome bonus?',
-      answer: 'New users receive 5 free recipe imports and 5 free recipe generations automatically on signup. No credit card required, and credits never expire.'
+      answer: 'The welcome bonus is the 7-day free trial with UNLIMITED recipe imports and generations (no credit limits or deductions) that you receive when you start a premium subscription. This is separate from the 5 free recipe imports and 5 free recipe generations that all new users receive on signup.'
     },
     {
-      question: 'Can I use credits for either imports or generations?',
-      answer: 'Yes! Premium subscription credits are flexible - you can use them for either recipe imports or recipe generations, whichever you prefer.'
+      question: 'Can I use import credits for generations or vice versa?',
+      answer: 'No. Recipe import credits and recipe generation credits are separate and cannot be interchanged. Import credits can only be used for importing recipes, and generation credits can only be used for AI recipe generation.'
     },
     {
       question: 'Do one-time purchase credits expire?',
@@ -186,7 +188,7 @@ const Pricing = () => {
     },
     {
       question: 'What happens during the 7-day free trial?',
-      answer: 'During the free trial, you get unlimited usage of all premium features. After the trial, your subscription plan limits apply.'
+      answer: 'During the 7-day free trial, you get UNLIMITED recipe imports and generations with no credit limits or deductions. You can import and generate as many recipes as you want during the trial period. After the trial ends, your subscription plan credit limits apply.'
     },
     {
       question: 'Can I cancel my subscription anytime?',
@@ -195,6 +197,22 @@ const Pricing = () => {
     {
       question: 'What payment methods do you accept?',
       answer: 'We accept all major credit cards, PayPal, and Google Pay through secure payment processing via the App Store and Google Play.'
+    },
+    {
+      question: 'Can I share my subscription with family?',
+      answer: 'Yes! Ad-free features are shareable with family members where applicable. Subscription credits are tied to individual accounts.'
+    },
+    {
+      question: 'What happens if my payment fails?',
+      answer: 'We offer a 3-day grace period for payment issues. During this time, you\'ll still have access to your subscription. If payment isn\'t resolved, your subscription will be paused.'
+    },
+    {
+      question: 'Can I change my subscription plan?',
+      answer: 'Yes! You can upgrade or downgrade your subscription plan anytime. Changes will take effect at your next billing cycle, and you\'ll be charged or credited accordingly.'
+    },
+    {
+      question: 'Do subscriptions auto-renew?',
+      answer: 'Yes, subscriptions automatically renew to ensure uninterrupted access. You can cancel anytime, and your subscription will remain active until the end of your current billing period.'
     }
   ];
 
@@ -255,7 +273,7 @@ const Pricing = () => {
             </div>
 
             <div className="space-y-4 mb-8">
-              <h4 className="font-semibold text-gray-900">Welcome Bonus:</h4>
+              <h4 className="font-semibold text-gray-900">What You Get:</h4>
               <ul className="space-y-3">
                 {freeTier.features.map((feature, index) => (
                   <li key={index} className="flex items-start space-x-3">
@@ -264,6 +282,11 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
+              <div className="mt-6 p-4 bg-theme-background rounded-lg border border-theme-primary/20">
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">Welcome Bonus:</span> When you upgrade to a premium subscription, you'll receive a 7-day free trial with <span className="font-semibold">UNLIMITED</span> recipe imports and generations (no credit limits!).
+                </p>
+              </div>
               
               <h4 className="font-semibold text-gray-900 mt-6">Limitations:</h4>
               <ul className="space-y-3">
@@ -347,7 +370,7 @@ const Pricing = () => {
             <div className="text-center space-y-4 mb-16">
               <h2 className="text-4xl font-bold text-gray-900">Premium Subscriptions</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Monthly credit refresh with flexible usage. 7-day free trial included.
+                Monthly credit refresh. 7-day free trial with UNLIMITED imports and generations (no credit limits!).
               </p>
             </div>
 
