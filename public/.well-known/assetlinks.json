@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.recipease.kitchen",
+    "sha256_cert_fingerprints": ["9f:21:97:c4:8f:0d:3a:f1:b9:69:45:38:46:b5:bc:01:d0:6e:ac:fe:62:dd:bc:96:ba:51:2e:24:1c:3a:c2:b6"]
+  }
+}]
+
