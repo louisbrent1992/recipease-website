@@ -3,7 +3,7 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.recipease.kitchen",
-    "sha256_cert_fingerprints": ["9f:21:97:c4:8f:0d:3a:f1:b9:69:45:38:46:b5:bc:01:d0:6e:ac:fe:62:dd:bc:96:ba:51:2e:24:1c:3a:c2:b6"]
+    "sha256_cert_fingerprints": ["EE:BA:05:36:5E:D0:AE:50:B5:8C:E8:76:E2:6B:9F:14:6A:0E:5A:02:28:09:63:F2:BB:87:5D:27:F2:3F:D7:CD"]
   }
 }]
 
