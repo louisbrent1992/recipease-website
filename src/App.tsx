@@ -14,6 +14,7 @@ import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
 import AppleCallback from './pages/AppleCallback';
 import FairUse from './pages/FairUse';
+import DataDeletion from './pages/DataDeletion';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/cookies" element={<Cookies />} />
             <Route path="/auth/callback" element={<AppleCallback />} />
             <Route path="/fair-use" element={<FairUse />} />
+            <Route path="/data-deletion" element={<DataDeletion />} />
           </Routes>
         </main>
         <Footer />
