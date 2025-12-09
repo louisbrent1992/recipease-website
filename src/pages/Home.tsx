@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Download, Smartphone, Brain, Users, BookOpen, Calendar } from 'lucide-react';
+import { Star, Download, Smartphone, Brain, Users, BookOpen, Calendar, Apple } from 'lucide-react';
 
 const Home = () => {
   const features = [
@@ -79,13 +79,24 @@ const Home = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
+                <a 
+                  href="https://apps.apple.com/us/app/recipease-kitchen/id6748662065"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                >
+                  <Apple className="h-6 w-6" />
+                  <span>App Store</span>
+                </a>
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.recipease.kitchen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                >
                   <Download className="h-5 w-5" />
-                  <span>Download on Google Play</span>
-                </button>
-                <button className="border-2 border-theme-primary text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-theme-primary hover:text-white transition-all duration-200">
-                  Watch Demo
-                </button>
+                  <span>Google Play</span>
+                </a>
               </div>
 
               <div className="flex items-center space-x-6 text-sm text-gray-600">
@@ -190,10 +201,26 @@ const Home = () => {
             <p className="text-xl text-white/90">
               Join thousands of home chefs who have already discovered the joy of cooking with RecipEase.
             </p>
-            <button className="bg-white text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 mx-auto">
-              <Download className="h-5 w-5" />
-              <span>Download Free Today</span>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://apps.apple.com/us/app/recipease-kitchen/id6748662065"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+              >
+                <Apple className="h-6 w-6" />
+                <span>App Store</span>
+              </a>
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.recipease.kitchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+              >
+                <Download className="h-5 w-5" />
+                <span>Google Play</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

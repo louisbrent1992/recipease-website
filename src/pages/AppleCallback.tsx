@@ -61,7 +61,7 @@ const AppleCallback = () => {
         
         // Fallback: redirect to app store if deep link fails
         setTimeout(() => {
-          window.location.href = 'https://play.google.com/store/apps/details?id=com.recipease.app';
+          window.location.href = 'https://play.google.com/store/apps/details?id=com.recipease.kitchen';
         }, 1000);
       }, 3000);
       
@@ -77,7 +77,7 @@ const AppleCallback = () => {
     
     // Fallback: redirect to app store
     setTimeout(() => {
-      window.location.href = 'https://play.google.com/store/apps/details?id=com.recipease.app';
+      window.location.href = 'https://play.google.com/store/apps/details?id=com.recipease.kitchen';
     }, 1000);
   };
 
