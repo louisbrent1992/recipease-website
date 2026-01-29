@@ -32,21 +32,15 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.href
+                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${location.pathname === item.href
                     ? 'text-orange-600 border-b-2 border-orange-600'
                     : 'text-gray-700 hover:text-orange-600'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
             ))}
-            <a
-              href="#"
-              className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200 transform hover:scale-105"
-            >
-              Download App
-            </a>
+
           </div>
 
           {/* Mobile menu button */}
@@ -68,22 +62,16 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
-                    location.pathname === item.href
+                  className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${location.pathname === item.href
                       ? 'text-orange-600 bg-orange-50'
                       : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
-                  }`}
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <a
-                href="#"
-                className="block text-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-medium mx-3 mt-4"
-              >
-                Download App
-              </a>
+
             </div>
           </div>
         )}
