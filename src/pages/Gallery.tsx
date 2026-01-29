@@ -16,45 +16,53 @@ const Gallery = () => {
     {
       id: 1,
       category: 'screenshots',
-      title: 'Recipe Import Screen',
-      description: 'Seamlessly import recipes from social media and websites',
+      title: 'AI Photo Import',
+      description: 'Scan cookbooks and handwritten recipes with advanced OCR technology',
       type: 'image',
-      url: '/screenshots/recipe_import.png'
+      url: '/screenshots/ai_photo_import.png'
     },
     {
       id: 2,
       category: 'screenshots',
-      title: 'AI Photo Import',
-      description: 'Scan cookbooks and handwritten recipes with OCR technology',
+      title: 'TikTok Recipe Import',
+      description: 'Import viral recipes from TikTok and Instagram with one tap',
       type: 'image',
-      url: '/screenshots/recipe_generator.png'
+      url: '/screenshots/tiktok_import.png'
     },
     {
       id: 3,
       category: 'screenshots',
-      title: 'Recipe Collections',
-      description: 'Organize and manage your recipe collection',
+      title: 'AI Kitchen Assistant',
+      description: 'Get personalized recipe suggestions based on ingredients you have',
       type: 'image',
-      url: '/screenshots/recipe_collections.png'
+      url: '/screenshots/ai_kitchen_assistant.png'
     },
     {
       id: 4,
-      category: 'features',
-      title: 'Smart Shopping List',
-      description: 'Automatically generated shopping lists from recipes',
+      category: 'screenshots',
+      title: 'Recipe Collections',
+      description: 'Organize your recipes into beautiful custom collections',
       type: 'image',
-      url: 'https://images.pexels.com/photos/4099134/pexels-photo-4099134.jpeg?auto=compress&cs=tinysrgb&w=800'
+      url: '/screenshots/my_collections.png'
     },
     {
       id: 5,
       category: 'features',
-      title: 'Weekly Digest',
-      description: 'Personalized recipe recommendations every week',
+      title: 'Offline Access',
+      description: 'Access all your saved recipes even without internet connection',
       type: 'image',
-      url: 'https://images.pexels.com/photos/4099141/pexels-photo-4099141.jpeg?auto=compress&cs=tinysrgb&w=800'
+      url: '/screenshots/offline_access.png'
     },
     {
       id: 6,
+      category: 'features',
+      title: 'Smart Notifications',
+      description: 'Get daily recipe inspiration and meal prep reminders',
+      type: 'image',
+      url: '/screenshots/smart_notifications.png'
+    },
+    {
+      id: 7,
       category: 'branding',
       title: 'RecipEase Kitchen Logo',
       description: 'Official RecipEase Kitchen brand logo and variations',
@@ -62,18 +70,10 @@ const Gallery = () => {
       url: '/logo.png'
     },
     {
-      id: 7,
-      category: 'features',
-      title: 'Cross-Platform Sync',
-      description: 'Access recipes across all your devices',
-      type: 'image',
-      url: 'https://images.pexels.com/photos/4099239/pexels-photo-4099239.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
       id: 8,
       category: 'screenshots',
       title: 'Recipe Detail View',
-      description: 'Beautiful, interactive recipe display',
+      description: 'Beautiful, interactive recipe display with ingredients and instructions',
       type: 'image',
       url: '/screenshots/recipe_details.png'
     }
@@ -132,8 +132,8 @@ const Gallery = () => {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${activeCategory === category.id
-                    ? 'bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
               >
                 {category.icon}
