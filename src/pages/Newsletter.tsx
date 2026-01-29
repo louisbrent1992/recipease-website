@@ -108,7 +108,7 @@ const Newsletter = () => {
                 <Mail className="h-16 w-16 mx-auto text-white/80" />
                 <h2 className="text-4xl font-bold">Join 50,000+ Food Lovers</h2>
                 <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                  Subscribe to our weekly digest and never run out of delicious recipe ideas. 
+                  Subscribe to our weekly digest and never run out of delicious recipe ideas.
                   It's free, personalized, and delivered every Thursday.
                 </p>
               </div>
@@ -185,7 +185,7 @@ const Newsletter = () => {
                 <Bell className="h-8 w-8 text-white/80" />
               </div>
             </div>
-            
+
             <div className="p-8">
               <div className="space-y-6">
                 <div>
@@ -219,7 +219,7 @@ const Newsletter = () => {
                 <div className="border-t pt-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Customizable Preferences</h4>
                   <p className="text-gray-600">
-                    Enable or disable any notification category in your app settings. Each category uses 
+                    Enable or disable any notification category in your app settings. Each category uses
                     optimized search tags for better recipe discovery.
                   </p>
                 </div>
@@ -227,7 +227,7 @@ const Newsletter = () => {
                 <div className="border-t pt-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Deep Linking</h4>
                   <p className="text-gray-600">
-                    Notifications navigate directly to relevant screens - recipe details, discovery, or collections. 
+                    Notifications navigate directly to relevant screens - recipe details, discovery, or collections.
                     No need to search for the content manually.
                   </p>
                 </div>
@@ -260,21 +260,19 @@ const Newsletter = () => {
                     </h3>
                     <p className="text-gray-600 text-sm">
                       {key === 'weeklyDigest' && 'Get personalized recipe recommendations every Thursday'}
-                      {key === 'newFeatures' && 'Be the first to know about new RecipEase features'}
+                      {key === 'newFeatures' && 'Be the first to know about new RecipEase Kitchen features'}
                       {key === 'cookingTips' && 'Improve your culinary skills with expert tips'}
                       {key === 'specialOffers' && 'Receive exclusive discounts and promotions'}
                     </p>
                   </div>
                   <button
                     onClick={() => handlePreferenceChange(key)}
-                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                      value ? 'bg-theme-primary' : 'bg-gray-300'
-                    }`}
+                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${value ? 'bg-theme-primary' : 'bg-gray-300'
+                      }`}
                   >
                     <span
-                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                        value ? 'translate-x-6' : 'translate-x-1'
-                      }`}
+                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${value ? 'translate-x-6' : 'translate-x-1'
+                        }`}
                     />
                   </button>
                 </div>
@@ -308,7 +306,7 @@ const Newsletter = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-gray-50 rounded-xl p-6">
               <div className="space-y-4">
                 <div className="flex space-x-1">

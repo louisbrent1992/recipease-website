@@ -39,13 +39,13 @@ const Home = () => {
     {
       name: "Sarah Johnson",
       role: "Home Chef",
-      content: "RecipEase has completely transformed how I cook! The AI suggestions are spot-on, and I love how easy it is to import recipes from Instagram.",
+      content: "RecipEase Kitchen has completely transformed how I cook! The AI suggestions are spot-on, and I love how easy it is to import recipes from Instagram.",
       rating: 5
     },
     {
       name: "Mike Chen",
       role: "Food Blogger",
-      content: "As a food blogger, I needed a way to organize my recipes efficiently. RecipEase is perfect for that and more!",
+      content: "As a food blogger, I needed a way to organize my recipes efficiently. RecipEase Kitchen is perfect for that and more!",
       rating: 5
     },
     {
@@ -138,7 +138,7 @@ const Home = () => {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-bold text-gray-900">Everything You Need to Cook Better</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              RecipEase combines intelligent technology with intuitive design to make cooking more enjoyable and efficient than ever before.
+              RecipEase Kitchen combines intelligent technology with intuitive design to make cooking more enjoyable and efficient than ever before.
             </p>
           </div>
 
@@ -161,7 +161,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-bold text-gray-900">Loved by Home Chefs Everywhere</h2>
-            <p className="text-xl text-gray-600">See what our users have to say about RecipEase</p>
+            <p className="text-xl text-gray-600">See what our users have to say about RecipEase Kitchen</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -191,7 +191,7 @@ const Home = () => {
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-white">Ready to Transform Your Cooking?</h2>
             <p className="text-xl text-white/90">
-              Join thousands of home chefs who have already discovered the joy of cooking with RecipEase.
+              Join thousands of home chefs who have already discovered the joy of cooking with RecipEase Kitchen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://apps.apple.com/us/app/recipease-ai-recipe-scanner/id6748662065?itscg=30200&itsct=apps_box_badge&mttnsubad=6748662065" style={{ display: 'inline-block' }}>

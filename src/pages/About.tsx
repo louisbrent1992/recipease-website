@@ -50,8 +50,13 @@ const About = () => {
     },
     {
       year: '2025',
+      title: 'RecipEase Kitchen',
+      description: 'Rebranded to RecipEase Kitchen with the launch of AI Photo Import and TikTok integration.'
+    },
+    {
+      year: '2026',
       title: 'Global Expansion',
-      description: 'Expanded to 50+ countries with localized content and multi-language support.'
+      description: 'Expanding to 50+ countries with localized content and multi-language support.'
     }
   ];
 
@@ -62,11 +67,11 @@ const About = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             About
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> RecipEase</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> RecipEase Kitchen</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            We're on a mission to revolutionize home cooking by making it easier, more creative, 
-            and more enjoyable for everyone through intelligent technology.
+            We're on a mission to revolutionize home cooking by transforming physical cookbooks and social media inspiration
+            into a unified, intelligent digital kitchen.
           </p>
         </div>
       </section>
@@ -78,12 +83,12 @@ const About = () => {
             <div className="space-y-6">
               <h2 className="text-4xl font-bold text-gray-900">Our Mission</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                At RecipEase, we believe that everyone deserves to enjoy delicious, home-cooked meals regardless 
-                of their cooking experience or busy lifestyle. Our intelligent platform transforms the way people 
+                At RecipEase Kitchen, we believe that everyone deserves to enjoy delicious, home-cooked meals regardless
+                of their cooking experience or busy lifestyle. Our intelligent platform transforms the way people
                 discover, create, and organize recipes.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                We're not just building an app – we're creating a smart culinary companion that learns your preferences, 
+                We're not just building an app – we're creating a smart culinary companion that learns your preferences,
                 understands your dietary needs, and helps you become a more confident cook.
               </p>
               <div className="flex items-center space-x-4">
@@ -140,18 +145,18 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8">
               <div className="text-center space-y-6">
                 <div className="bg-theme-primary text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
                   <Award className="h-8 w-8" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">Advent Hub Solutions</h3>
-                  <p className="text-gray-600">The company behind RecipEase</p>
+                  <p className="text-gray-600">The company behind RecipEase Kitchen</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 text-left">
                   <p className="text-gray-700 text-sm">
-                    A technology company focused on creating innovative solutions that make everyday tasks 
+                    A technology company focused on creating innovative solutions that make everyday tasks
                     more efficient and enjoyable through artificial intelligence.
                   </p>
                 </div>
@@ -160,8 +165,8 @@ const About = () => {
             <div className="space-y-6">
               <h2 className="text-4xl font-bold text-gray-900">Built by Advent Hub Solutions</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                RecipEase is proudly developed by Advent Hub Solutions, a forward-thinking technology company 
-                specializing in intelligent consumer applications. Our team combines deep technical expertise 
+                RecipEase Kitchen is proudly developed by Advent Hub Solutions, a forward-thinking technology company
+                specializing in intelligent consumer applications. Our team combines deep technical expertise
                 with a passion for solving real-world problems.
               </p>
               <div className="space-y-4">
@@ -215,7 +220,7 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
-                Download RecipEase
+                Download App
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-theme-primary transition-all duration-200">
                 Contact Us

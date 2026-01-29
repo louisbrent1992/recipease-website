@@ -49,22 +49,22 @@ const AppleCallback = () => {
       // In a real implementation, you would send this to your backend
       // For now, we'll simulate the process
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
+
       // Simulate successful authentication
       setStatus('success');
       setMessage('Successfully signed in with Apple! Redirecting to the app...');
-      
+
       // Redirect to app after a delay
       setTimeout(() => {
         // Try to open the app with a deep link
         window.location.href = 'recipease://auth/success';
-        
+
         // Fallback: redirect to app store if deep link fails
         setTimeout(() => {
           window.location.href = 'https://play.google.com/store/apps/details?id=com.recipease.kitchen';
         }, 1000);
       }, 3000);
-      
+
     } catch (error) {
       setStatus('error');
       setMessage('Failed to complete sign in. Please try again.');
@@ -74,7 +74,7 @@ const AppleCallback = () => {
   const handleRetry = () => {
     // Redirect back to the app to retry sign in
     window.location.href = 'recipease://auth/retry';
-    
+
     // Fallback: redirect to app store
     setTimeout(() => {
       window.location.href = 'https://play.google.com/store/apps/details?id=com.recipease.kitchen';
@@ -141,7 +141,7 @@ const AppleCallback = () => {
                 Try Again
               </button>
             )}
-            
+
             <button
               onClick={handleCloseWindow}
               className="w-full border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-full font-semibold hover:border-theme-primary hover:text-theme-primary transition-all duration-200"
@@ -163,7 +163,7 @@ const AppleCallback = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-500">
             Powered by{' '}
-            <span className="font-semibold text-theme-primary">RecipEase</span>
+            <span className="font-semibold text-theme-primary">RecipEase Kitchen</span>
           </p>
         </div>
       </div>

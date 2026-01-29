@@ -56,12 +56,12 @@ const Privacy = () => {
       <section className="pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-sm p-8 space-y-8">
-            
+
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Information We Collect</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  We collect information you provide directly to us, such as when you create an account, 
+                  We collect information you provide directly to us, such as when you create an account,
                   use our services, or contact us for support.
                 </p>
                 <div className="pl-4">
@@ -108,7 +108,7 @@ const Privacy = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Data Security</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  We implement appropriate security measures to protect your personal information against 
+                  We implement appropriate security measures to protect your personal information against
                   unauthorized access, alteration, disclosure, or destruction.
                 </p>
                 <ul className="list-disc pl-4 space-y-2">
@@ -144,7 +144,7 @@ const Privacy = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Cookies and Tracking</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  We use cookies and similar technologies to enhance your experience, analyze usage, 
+                  We use cookies and similar technologies to enhance your experience, analyze usage,
                   and provide personalized content. You can control cookie settings in your browser.
                 </p>
               </div>
@@ -154,7 +154,7 @@ const Privacy = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Children's Privacy</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  RecipEase is not intended for children under 13 years of age. We do not knowingly 
+                  RecipEase Kitchen is not intended for children under 13 years of age. We do not knowingly
                   collect personal information from children under 13.
                 </p>
               </div>
@@ -164,7 +164,7 @@ const Privacy = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Changes to This Policy</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  We may update this Privacy Policy from time to time. We will notify you of any changes 
+                  We may update this Privacy Policy from time to time. We will notify you of any changes
                   by posting the new policy on this page and updating the "Last updated" date.
                 </p>
               </div>
@@ -184,7 +184,7 @@ const Privacy = () => {
 
             <div className="border-t pt-8">
               <p className="text-sm text-gray-500 text-center">
-                This Privacy Policy is effective as of March 1, 2025, and will remain in effect except 
+                This Privacy Policy is effective as of March 1, 2025, and will remain in effect except
                 with respect to any changes in its provisions in the future.
               </p>
             </div>

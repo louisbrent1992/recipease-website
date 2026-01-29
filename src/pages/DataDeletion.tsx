@@ -16,7 +16,7 @@ const DataDeletion = () => {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-sm p-8 space-y-8">
-            
+
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <Trash2 className="h-6 w-6 text-theme-primary mr-2" />
@@ -24,10 +24,10 @@ const DataDeletion = () => {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  If you wish to delete your RecipEase account and all associated data, you can do so directly within the mobile application. Please follow these steps:
+                  If you wish to delete your RecipEase Kitchen account and all associated data, you can do so directly within the mobile application. Please follow these steps:
                 </p>
                 <ol className="list-decimal pl-6 space-y-2">
-                  <li>Open the <strong>RecipEase</strong> app on your mobile device.</li>
+                  <li>Open the <strong>RecipEase Kitchen</strong> app on your mobile device.</li>
                   <li>Go to your <strong>Profile</strong> tab.</li>
                   <li>Tap on the <strong>Settings</strong> icon (gear icon).</li>
                   <li>Select <strong>Manage Account</strong> or <strong>Privacy Settings</strong>.</li>
@@ -67,8 +67,8 @@ const DataDeletion = () => {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Upon deletion, your personal information, recipe data, and preferences are removed from our active databases. 
-                  Some data may remain in our backups for a limited period (up to 90 days) as part of our disaster recovery procedures, 
+                  Upon deletion, your personal information, recipe data, and preferences are removed from our active databases.
+                  Some data may remain in our backups for a limited period (up to 90 days) as part of our disaster recovery procedures,
                   after which it will be permanently overwritten.
                 </p>
               </div>

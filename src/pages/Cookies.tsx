@@ -11,7 +11,7 @@ const Cookies = () => {
 
   const handleSettingChange = (key: string) => {
     if (key === 'essential') return; // Essential cookies cannot be disabled
-    
+
     setCookieSettings(prev => ({
       ...prev,
       [key]: !prev[key as keyof typeof prev]
@@ -73,8 +73,8 @@ const Cookies = () => {
               <Cookie className="h-16 w-16 text-theme-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">What Are Cookies?</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Cookies are small text files that are stored on your device when you visit our website. 
-                They help us provide you with a better experience by remembering your preferences and 
+                Cookies are small text files that are stored on your device when you visit our website.
+                They help us provide you with a better experience by remembering your preferences and
                 understanding how you use our services.
               </p>
             </div>
@@ -108,14 +108,12 @@ const Cookies = () => {
                     ) : (
                       <button
                         onClick={() => handleSettingChange(type.key)}
-                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                          cookieSettings[type.key as keyof typeof cookieSettings] ? 'bg-theme-primary' : 'bg-gray-300'
-                        }`}
+                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${cookieSettings[type.key as keyof typeof cookieSettings] ? 'bg-theme-primary' : 'bg-gray-300'
+                          }`}
                       >
                         <span
-                          className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                            cookieSettings[type.key as keyof typeof cookieSettings] ? 'translate-x-6' : 'translate-x-1'
-                          }`}
+                          className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${cookieSettings[type.key as keyof typeof cookieSettings] ? 'translate-x-6' : 'translate-x-1'
+                            }`}
                         />
                       </button>
                     )}
@@ -143,12 +141,12 @@ const Cookies = () => {
       <section className="pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-sm p-8 space-y-8">
-            
+
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">How We Use Cookies</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  RecipEase uses cookies to enhance your browsing experience and provide personalized services. 
+                  RecipEase Kitchen uses cookies to enhance your browsing experience and provide personalized services.
                   Here's how we use different types of cookies:
                 </p>
                 <ul className="list-disc pl-4 space-y-2">
@@ -174,7 +172,7 @@ const Cookies = () => {
                   <li><strong>Customer Support:</strong> Live chat and support services</li>
                 </ul>
                 <p>
-                  These third parties have their own privacy policies and cookie practices, 
+                  These third parties have their own privacy policies and cookie practices,
                   which we encourage you to review.
                 </p>
               </div>
@@ -217,8 +215,8 @@ const Cookies = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Updates to This Policy</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  We may update this Cookie Policy from time to time to reflect changes in our practices 
-                  or for other operational, legal, or regulatory reasons. We will notify you of any 
+                  We may update this Cookie Policy from time to time to reflect changes in our practices
+                  or for other operational, legal, or regulatory reasons. We will notify you of any
                   material changes by posting the updated policy on our website.
                 </p>
               </div>
@@ -238,8 +236,8 @@ const Cookies = () => {
 
             <div className="border-t pt-8">
               <p className="text-sm text-gray-500 text-center">
-                This Cookie Policy is effective as of March 1, 2025, and applies to all visitors 
-                and users of the RecipEase website and services.
+                This Cookie Policy is effective as of March 1, 2025, and applies to all visitors
+                and users of the RecipEase Kitchen website and services.
               </p>
             </div>
           </div>

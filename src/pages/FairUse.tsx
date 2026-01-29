@@ -79,8 +79,8 @@ const FairUse = () => {
               <Scale className="h-16 w-16 text-theme-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Fair Use Commitment</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                RecipEase is designed to enhance your cooking experience while respecting the rights of content creators 
-                and maintaining a sustainable service for all users. This Fair Use Policy outlines acceptable usage 
+                RecipEase Kitchen is designed to enhance your cooking experience while respecting the rights of content creators
+                and maintaining a sustainable service for all users. This Fair Use Policy outlines acceptable usage
                 guidelines and limitations.
               </p>
             </div>
@@ -94,7 +94,7 @@ const FairUse = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Usage Guidelines</h2>
             <p className="text-lg text-gray-600">
-              Understanding what's allowed and what's not when using RecipEase
+              Understanding what's allowed and what's not when using RecipEase Kitchen
             </p>
           </div>
 
@@ -108,9 +108,8 @@ const FairUse = () => {
                 <ul className="space-y-3">
                   {section.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start space-x-3">
-                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                        section.title === 'Acceptable Use' ? 'bg-theme-accent' : 'bg-red-500'
-                      }`}></div>
+                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${section.title === 'Acceptable Use' ? 'bg-theme-accent' : 'bg-red-500'
+                        }`}></div>
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -155,7 +154,7 @@ const FairUse = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-sm p-8 space-y-8">
-            
+
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Recipe Import Guidelines</h2>
               <div className="space-y-4 text-gray-600">
@@ -180,7 +179,7 @@ const FairUse = () => {
                 </p>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>Generated recipes are for personal use and inspiration</li>
-                  <li>Users may share smart-generated recipes with proper attribution to RecipEase</li>
+                  <li>Users may share smart-generated recipes with proper attribution to RecipEase Kitchen</li>
                   <li>Commercial use of smart-generated content requires explicit permission</li>
                   <li>We reserve the right to limit smart feature usage to prevent abuse</li>
                   <li>Quality and accuracy of smart-generated content may vary</li>
@@ -208,7 +207,7 @@ const FairUse = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Content Sharing & Community</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  When sharing content within the RecipEase community:
+                  When sharing content within the RecipEase Kitchen community:
                 </p>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>Only share content you have the right to distribute</li>
@@ -234,7 +233,7 @@ const FairUse = () => {
                   <li>Cooperation with law enforcement when required</li>
                 </ul>
                 <p>
-                  We reserve the right to investigate suspected violations and take appropriate action 
+                  We reserve the right to investigate suspected violations and take appropriate action
                   to protect our service and community.
                 </p>
               </div>
@@ -288,8 +287,8 @@ const FairUse = () => {
 
             <div className="border-t pt-8">
               <p className="text-sm text-gray-500 text-center">
-                This Fair Use Policy is effective as of March 1, 2025, and applies to all users 
-                of the RecipEase application and services. By using RecipEase, you agree to comply 
+                This Fair Use Policy is effective as of March 1, 2025, and applies to all users
+                of the RecipEase Kitchen application and services. By using RecipEase Kitchen, you agree to comply
                 with these guidelines.
               </p>
             </div>

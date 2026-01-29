@@ -8,7 +8,7 @@ const Pricing = () => {
     name: 'Free',
     icon: <Star className="h-8 w-8 text-theme-secondary" />,
     price: 0,
-    description: 'Perfect for trying RecipEase',
+    description: 'Perfect for trying RecipEase Kitchen',
     features: [
       '5 free recipe imports',
       '5 free recipe generations',
@@ -229,26 +229,24 @@ const Pricing = () => {
           <p className="text-xl text-gray-600 leading-relaxed mb-8">
             Start free with 5 imports and 5 generations. Choose one-time purchases or subscriptions that fit your cooking style.
           </p>
-          
+
           {/* Toggle between Bundles and Subscriptions */}
           <div className="flex items-center justify-center space-x-4 mb-8">
             <button
               onClick={() => setShowBundles(true)}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
-                showBundles
+              className={`px-6 py-3 rounded-full font-medium transition-all ${showBundles
                   ? 'bg-theme-primary text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
+                }`}
             >
               One-Time Purchases
             </button>
             <button
               onClick={() => setShowBundles(false)}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
-                !showBundles
+              className={`px-6 py-3 rounded-full font-medium transition-all ${!showBundles
                   ? 'bg-theme-primary text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
+                }`}
             >
               Subscriptions
             </button>
@@ -263,7 +261,7 @@ const Pricing = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Free</h2>
             <p className="text-lg text-gray-600">No credit card required</p>
           </div>
-          
+
           <div className="bg-white rounded-2xl shadow-xl border-2 border-gray-200 p-8">
             <div className="text-center space-y-4 mb-8">
               <div className="flex justify-center">{freeTier.icon}</div>
@@ -287,7 +285,7 @@ const Pricing = () => {
                   <span className="font-semibold">Welcome Bonus:</span> When you upgrade to a premium subscription, you'll receive a 7-day free trial with <span className="font-semibold">UNLIMITED</span> recipe imports and generations (no credit limits!).
                 </p>
               </div>
-              
+
               <h4 className="font-semibold text-gray-900 mt-6">Limitations:</h4>
               <ul className="space-y-3">
                 {freeTier.limitations.map((limitation, index) => (
@@ -321,9 +319,8 @@ const Pricing = () => {
               {bundles.map((bundle, index) => (
                 <div
                   key={index}
-                  className={`relative bg-white rounded-2xl shadow-xl border-2 ${
-                    bundle.popular ? 'border-theme-primary ring-4 ring-theme-primary/20' : 'border-gray-200'
-                  } transition-all duration-300 hover:shadow-2xl`}
+                  className={`relative bg-white rounded-2xl shadow-xl border-2 ${bundle.popular ? 'border-theme-primary ring-4 ring-theme-primary/20' : 'border-gray-200'
+                    } transition-all duration-300 hover:shadow-2xl`}
                 >
                   {bundle.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -332,7 +329,7 @@ const Pricing = () => {
                       </span>
                     </div>
                   )}
-                  
+
                   <div className="p-6">
                     <div className="text-center space-y-4 mb-6">
                       <div className="flex justify-center">{bundle.icon}</div>
@@ -378,9 +375,8 @@ const Pricing = () => {
               {subscriptions.map((plan, index) => (
                 <div
                   key={index}
-                  className={`relative bg-white rounded-2xl shadow-xl border-2 ${
-                    plan.popular ? 'border-theme-primary ring-4 ring-theme-primary/20 scale-105' : 'border-gray-200'
-                  } transition-all duration-300 hover:shadow-2xl`}
+                  className={`relative bg-white rounded-2xl shadow-xl border-2 ${plan.popular ? 'border-theme-primary ring-4 ring-theme-primary/20 scale-105' : 'border-gray-200'
+                    } transition-all duration-300 hover:shadow-2xl`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -389,7 +385,7 @@ const Pricing = () => {
                       </span>
                     </div>
                   )}
-                  
+
                   {plan.badge && (
                     <div className="absolute -top-4 right-4">
                       <span className="bg-green-500 text-white px-4 py-1 rounded-full text-xs font-semibold">
@@ -397,7 +393,7 @@ const Pricing = () => {
                       </span>
                     </div>
                   )}
-                  
+
                   <div className="p-8">
                     <div className="text-center space-y-4 mb-8">
                       <div className="flex justify-center">{plan.icon}</div>
@@ -444,7 +440,7 @@ const Pricing = () => {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600">
-              Everything you need to know about RecipEase pricing
+              Everything you need to know about RecipEase Kitchen pricing
             </p>
           </div>
 
@@ -465,7 +461,7 @@ const Pricing = () => {
           <div className="space-y-8">
             <h2 className="text-4xl font-bold text-gray-900">Ready to Start Cooking?</h2>
             <p className="text-xl text-gray-600">
-              Download RecipEase free and get 5 imports + 5 generations to start.
+              Download RecipEase Kitchen free and get 5 imports + 5 generations to start.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105 shadow-lg">

@@ -24,8 +24,8 @@ const Gallery = () => {
     {
       id: 2,
       category: 'screenshots',
-      title: 'AI Recipe Generator',
-      description: 'Generate personalized recipes with AI technology',
+      title: 'AI Photo Import',
+      description: 'Scan cookbooks and handwritten recipes with OCR technology',
       type: 'image',
       url: '/screenshots/recipe_generator.png'
     },
@@ -56,8 +56,8 @@ const Gallery = () => {
     {
       id: 6,
       category: 'branding',
-      title: 'RecipEase Logo',
-      description: 'Official RecipEase brand logo and variations',
+      title: 'RecipEase Kitchen Logo',
+      description: 'Official RecipEase Kitchen brand logo and variations',
       type: 'image',
       url: '/logo.png'
     },
@@ -79,8 +79,8 @@ const Gallery = () => {
     }
   ];
 
-  const filteredItems = activeCategory === 'all' 
-    ? mediaItems 
+  const filteredItems = activeCategory === 'all'
+    ? mediaItems
     : mediaItems.filter(item => item.category === activeCategory);
 
   // Close modal on ESC key
@@ -116,7 +116,7 @@ const Gallery = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Gallery</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Explore RecipEase through screenshots, feature graphics, and brand assets. 
+            Explore RecipEase Kitchen through screenshots, feature graphics, and brand assets.
             See how our beautiful design meets powerful functionality.
           </p>
         </div>
@@ -131,11 +131,10 @@ const Gallery = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                  activeCategory === category.id
+                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${activeCategory === category.id
                     ? 'bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {category.icon}
                 <span>{category.name}</span>
@@ -150,7 +149,7 @@ const Gallery = () => {
                 key={item.id}
                 className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
-                <div 
+                <div
                   className="bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden flex items-center justify-center cursor-pointer rounded-lg"
                   onClick={() => setExpandedImage({ url: item.url, title: item.title, description: item.description, category: item.category })}
                   style={{ minHeight: '200px', maxHeight: '400px' }}
@@ -184,7 +183,7 @@ const Gallery = () => {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-bold text-gray-900">App Walkthrough</h2>
             <p className="text-xl text-gray-600">
-              See RecipEase in action with our comprehensive app demonstration
+              See RecipEase Kitchen in action with our comprehensive app demonstration
             </p>
           </div>
 
@@ -228,11 +227,11 @@ const Gallery = () => {
 
       {/* Image Modal/Lightbox */}
       {expandedImage && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-sm"
           onClick={() => setExpandedImage(null)}
         >
-          <div 
+          <div
             className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >

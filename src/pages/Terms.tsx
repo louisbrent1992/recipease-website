@@ -6,7 +6,7 @@ const Terms = () => {
     {
       icon: <FileText className="h-8 w-8 text-theme-secondary" />,
       title: 'Clear Terms',
-      description: 'Straightforward terms and conditions for using RecipEase'
+      description: 'Straightforward terms and conditions for using RecipEase Kitchen'
     },
     {
       icon: <Scale className="h-8 w-8 text-theme-accent" />,
@@ -56,12 +56,12 @@ const Terms = () => {
       <section className="pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-sm p-8 space-y-8">
-            
+
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  By downloading, accessing, or using the RecipEase mobile application and related services 
+                  By downloading, accessing, or using the RecipEase mobile application and related services
                   (collectively, the "Service"), you agree to be bound by these Terms of Service ("Terms").
                 </p>
                 <p>
@@ -74,11 +74,12 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Description of Service</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  RecipEase is an AI-powered recipe management application that allows users to:
+                  RecipEase Kitchen is an AI-powered recipe management application that allows users to:
                 </p>
                 <ul className="list-disc pl-4 space-y-2">
-                  <li>Generate recipes using intelligent technology</li>
-                  <li>Import recipes from various sources</li>
+                  <li>Scan and digitize physical cookbooks and handwritten recipes</li>
+                  <li>Import recipes from TikTok, Instagram, and social media</li>
+                  <li>Generate recipes using AI technology</li>
                   <li>Organize and manage recipe collections</li>
                   <li>Create shopping lists from recipes</li>
                   <li>Receive personalized recipe recommendations</li>
@@ -122,13 +123,13 @@ const Terms = () => {
               <div className="space-y-4 text-gray-600">
                 <h3 className="font-semibold text-gray-900">Your Content:</h3>
                 <p>
-                  You retain ownership of recipes and content you create or import. By using our Service, 
+                  You retain ownership of recipes and content you create or import. By using our Service,
                   you grant us a license to store, process, and display your content to provide the Service.
                 </p>
-                
+
                 <h3 className="font-semibold text-gray-900 mt-4">Our Content:</h3>
                 <p>
-                  The RecipEase application, AI technology, and related intellectual property remain 
+                  The RecipEase Kitchen application, AI technology, and related intellectual property remain
                   the exclusive property of Advent Hub Solutions.
                 </p>
               </div>
@@ -138,7 +139,7 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Subscription and Payments</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  RecipEase offers both free and premium subscription tiers:
+                  RecipEase Kitchen offers both free and premium subscription tiers:
                 </p>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>Free accounts have limited features and usage quotas</li>
@@ -158,7 +159,7 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Privacy and Data</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Your privacy is important to us. Our collection and use of personal information 
+                  Your privacy is important to us. Our collection and use of personal information
                   is governed by our Privacy Policy, which is incorporated into these Terms by reference.
                 </p>
               </div>
@@ -168,12 +169,12 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Disclaimers</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DISCLAIM ALL 
-                  WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY AND FITNESS 
+                  THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DISCLAIM ALL
+                  WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY AND FITNESS
                   FOR A PARTICULAR PURPOSE.
                 </p>
                 <p>
-                  We do not guarantee the accuracy of smart-generated recipes or imported content. 
+                  We do not guarantee the accuracy of smart-generated recipes or imported content.
                   Users should exercise judgment when following recipes, especially regarding food safety and dietary restrictions.
                 </p>
               </div>
@@ -183,8 +184,8 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Limitation of Liability</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, ADVENT HUB SOLUTIONS SHALL NOT BE LIABLE 
-                  FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR 
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, ADVENT HUB SOLUTIONS SHALL NOT BE LIABLE
+                  FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR
                   USE OF THE SERVICE.
                 </p>
               </div>
@@ -194,11 +195,11 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Termination</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  We may terminate or suspend your account immediately, without prior notice, for any 
+                  We may terminate or suspend your account immediately, without prior notice, for any
                   reason, including breach of these Terms. You may also terminate your account at any time.
                 </p>
                 <p>
-                  Upon termination, your right to use the Service ceases immediately, but your data 
+                  Upon termination, your right to use the Service ceases immediately, but your data
                   will be handled according to our Privacy Policy.
                 </p>
               </div>
@@ -208,8 +209,8 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Changes to Terms</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  We reserve the right to modify these Terms at any time. We will notify users of 
-                  material changes through the app or by email. Continued use of the Service after 
+                  We reserve the right to modify these Terms at any time. We will notify users of
+                  material changes through the app or by email. Continued use of the Service after
                   changes constitutes acceptance of the new Terms.
                 </p>
               </div>
@@ -219,7 +220,7 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Governing Law</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  These Terms are governed by the laws of the State of California, without regard to 
+                  These Terms are governed by the laws of the State of California, without regard to
                   conflict of law principles. Any disputes will be resolved in the courts of San Francisco, California.
                 </p>
               </div>
@@ -239,7 +240,7 @@ const Terms = () => {
 
             <div className="border-t pt-8">
               <p className="text-sm text-gray-500 text-center">
-                These Terms of Service are effective as of March 1, 2025. By using RecipEase, 
+                These Terms of Service are effective as of March 1, 2025. By using RecipEase Kitchen,
                 you acknowledge that you have read and understood these Terms.
               </p>
             </div>

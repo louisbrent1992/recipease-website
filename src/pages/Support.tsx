@@ -57,24 +57,24 @@ const Support = () => {
 
   const commonQuestions = [
     {
-      question: 'How do I import recipes from Instagram?',
-      answer: 'Open the RecipEase app, tap the "Import" button, and paste the Instagram post URL. Our AI will automatically extract and format the recipe for you.'
+      question: 'How do I import recipes from TikTok or Instagram?',
+      answer: 'Open the RecipEase Kitchen app, tap the "Import" button, and paste the TikTok or Instagram post URL. Our AI will automatically extract the recipe details, including ingredients and instructions.'
     },
     {
-      question: 'Can I use RecipEase offline?',
-      answer: 'Yes! All your saved recipes are available offline. However, you\'ll need an internet connection for AI recipe generation and importing new recipes.'
+      question: 'How does the AI Photo Import work?',
+      answer: 'Tap the camera icon in the app and snap a photo of any recipe—cookbook pages, handwritten cards, or notes. Our OCR technology instantly digitizes the text and structures it into a recipe format.'
     },
     {
-      question: 'How does the AI recipe generator work?',
-      answer: 'Our smart technology analyzes your preferences, dietary restrictions, and available ingredients to create personalized recipes. The more you use it, the better it gets at understanding your taste.'
+      question: 'Can I use RecipEase Kitchen offline?',
+      answer: 'Yes! All your saved recipes are available offline. Access your recipes, collections, and discover cache anytime—even without an internet connection.'
     },
     {
-      question: 'Can I share my recipes with family?',
-      answer: 'Absolutely! You can share individual recipes or create shared collections with family members. Premium users can also create collaborative shopping lists.'
+      question: 'What is the AI Kitchen Assistant?',
+      answer: 'Use our "Cook with what\'s in my fridge" feature! List your available ingredients, and our AI Chef will generate custom meal plans to help reduce food waste.'
     },
     {
       question: 'How do I cancel my subscription?',
-      answer: 'You can cancel your subscription anytime in the app settings or by contacting our support team. Your access will continue until the end of your billing period.'
+      answer: 'You can cancel your subscription anytime in the app settings or through the App Store/Play Store. Your access will continue until the end of your billing period.'
     },
     {
       question: 'Is my recipe data secure?',
@@ -92,7 +92,7 @@ const Support = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Help</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Get the support you need to make the most of RecipEase. Our team is ready to assist you with any questions or issues.
+            Get the support you need to make the most of RecipEase Kitchen. Our team is ready to assist you with any questions or issues.
           </p>
         </div>
       </section>
@@ -244,7 +244,7 @@ const Support = () => {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600">
-              Quick answers to common questions about RecipEase
+              Quick answers to common questions about RecipEase Kitchen
             </p>
           </div>
 
