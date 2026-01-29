@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img src="/logo.png" alt="RecipEase Logo" className="h-8 w-8" />
-              <span className="text-2xl font-bold text-orange-400">RecipEase</span>
+              <span className="text-2xl font-bold text-orange-400">RecipEase Kitchen</span>
             </div>
             <p className="text-gray-300">
               Your personal smart recipe assistant. Create, import, and organize recipes with ease.

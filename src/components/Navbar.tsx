@@ -22,7 +22,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img src="/logo.png" alt="RecipEase Logo" className="h-8 w-8" />
-              <span className="text-2xl font-bold text-orange-600">RecipEase</span>
+              <span className="text-2xl font-bold text-orange-600">RecipEase Kitchen</span>
             </Link>
           </div>
 
@@ -33,8 +33,8 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${location.pathname === item.href
-                    ? 'text-orange-600 border-b-2 border-orange-600'
-                    : 'text-gray-700 hover:text-orange-600'
+                  ? 'text-orange-600 border-b-2 border-orange-600'
+                  : 'text-gray-700 hover:text-orange-600'
                   }`}
               >
                 {item.name}
@@ -63,8 +63,8 @@ const Navbar = () => {
                   key={item.name}
                   to={item.href}
                   className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${location.pathname === item.href
-                      ? 'text-orange-600 bg-orange-50'
-                      : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
+                    ? 'text-orange-600 bg-orange-50'
+                    : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
                     }`}
                   onClick={() => setIsOpen(false)}
                 >

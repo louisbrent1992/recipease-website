@@ -1,37 +1,37 @@
 import React from 'react';
-import { Star, Smartphone, Brain, Users, BookOpen, Calendar } from 'lucide-react';
+import { Star, Smartphone, Brain, BookOpen, Camera, Wifi, Layout } from 'lucide-react';
 
 const Home = () => {
   const features = [
     {
-      icon: <Brain className="h-12 w-12 text-theme-primary" />,
-      title: "AI-Powered Recipe Generation",
-      description: "Generate unique, personalized recipes using AI. Specify ingredients, dietary restrictions, cuisine types, cooking time, and difficulty level."
+      icon: <Camera className="h-12 w-12 text-theme-primary" />,
+      title: "AI Photo Import",
+      description: "Transform your physical recipe collection into a digital cookbook. Snap a photo of cards, pages, or handwritten notes—our OCR does the rest!"
     },
     {
-      icon: <BookOpen className="h-12 w-12 text-theme-accent" />,
-      title: "Import from Social Media & Web",
-      description: "One-tap import from Instagram, TikTok, YouTube, Food Network, BBC Food, AllRecipes, and more. AI automatically extracts and structures recipe data."
+      icon: <Smartphone className="h-12 w-12 text-theme-accent" />,
+      title: "Save TikTok & Social Media",
+      description: "Never lose a viral recipe again. Import directly from TikTok and Instagram Reels. AI extracts ingredients and instructions instantly."
     },
     {
-      icon: <Users className="h-12 w-12 text-theme-secondary" />,
-      title: "Smart Recipe Collections",
-      description: "Create unlimited custom collections with automatic color and icon assignment. Organize by meal type, cuisine, occasion, or custom categories."
+      icon: <Brain className="h-12 w-12 text-theme-secondary" />,
+      title: "AI Kitchen Assistant",
+      description: "Stuck with random ingredients? Use 'Cook with what's in my fridge' to generate custom meal plans and reduce food waste."
     },
     {
-      icon: <Calendar className="h-12 w-12 text-theme-purple" />,
-      title: "Smart Notifications",
-      description: "Daily inspiration, meal prep Sunday, seasonal recipes, quick meals, budget-friendly options, and keto spotlight - all customizable."
+      icon: <BookOpen className="h-12 w-12 text-theme-purple" />,
+      title: "Ultimate Recipe Organizer",
+      description: "Build your digital recipe book with Smart Collections. Automatically sort scanned notes, social imports, and family favorites."
     },
     {
-      icon: <Smartphone className="h-12 w-12 text-theme-primary" />,
-      title: "Advanced Search & Discovery",
-      description: "Search by ingredients, dietary tags, cuisine type, difficulty, and cooking time. Smart tag system with multi-tag filtering."
+      icon: <Wifi className="h-12 w-12 text-theme-primary" />,
+      title: "Offline Access",
+      description: "Your personal recipe archive works anywhere. Access your saved recipes and collections even without an internet connection."
     },
     {
-      icon: <Star className="h-12 w-12 text-theme-secondary" />,
-      title: "Free Welcome Bonus",
-      description: "Start with 5 free recipe imports and 5 free recipe generations. No credit card required. Credits never expire."
+      icon: <Layout className="h-12 w-12 text-theme-secondary" />,
+      title: "Smart Features",
+      description: "Dietary filters for gluten-free/keto, weekly meal planning, and community imports to see what others are cooking."
     }
   ];
 
@@ -66,15 +66,14 @@ const Home = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-2 w-fit">
                   <img src="/logo.png" alt="RecipEase" className="h-12 w-12" />
-                  <span className="text-lg font-semibold text-theme-primary">RecipEase</span>
+                  <span className="text-lg font-semibold text-theme-primary">RecipEase Kitchen</span>
                 </div>
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Your Personal
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Smart</span>
-                  <br />Recipe Assistant
+                  Scan Cookbooks,
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Save TikToks</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  AI-powered recipe generation, social media imports, smart collections, and advanced discovery. Start free with 5 imports and 5 generations - no credit card required.
+                  Snap photos of cookbooks or import recipes from TikTok & Instagram instantly! Organize your kitchen with the ultimate AI recipe saver and scanner.
                 </p>
               </div>
 
