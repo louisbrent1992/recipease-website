@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Download, Smartphone, Brain, Users, BookOpen, Calendar, Apple } from 'lucide-react';
+import { Star, Smartphone, Brain, Users, BookOpen, Calendar } from 'lucide-react';
 
 const Home = () => {
   const features = [
@@ -77,25 +77,18 @@ const Home = () => {
                   AI-powered recipe generation, social media imports, smart collections, and advanced discovery. Start free with 5 imports and 5 generations - no credit card required.
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="https://apps.apple.com/us/app/recipease-kitchen/id6748662065"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-                >
-                  <Apple className="h-6 w-6" />
-                  <span>App Store</span>
+                <a href="https://apps.apple.com/us/app/recipease-ai-recipe-scanner/id6748662065?itscg=30200&itsct=apps_box_badge&mttnsubad=6748662065" style={{ display: 'inline-block' }}>
+                  <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1765238400" alt="Download on the App Store" style={{ width: '246px', height: '82px', verticalAlign: 'middle', objectFit: 'contain' }} />
                 </a>
-                <a 
+                <a
                   href="https://play.google.com/store/apps/details?id=com.recipease.kitchen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                  style={{ display: 'inline-block' }}
                 >
-                  <Download className="h-5 w-5" />
-                  <span>Google Play</span>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style={{ height: '82px', width: 'auto' }} />
                 </a>
               </div>
 
@@ -130,7 +123,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                
+
               </div>
               <div className="absolute -top-4 -right-4 bg-theme-accent text-white p-3 rounded-full shadow-lg">
                 <Star className="h-6 w-6 fill-current" />
@@ -202,23 +195,16 @@ const Home = () => {
               Join thousands of home chefs who have already discovered the joy of cooking with RecipEase.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://apps.apple.com/us/app/recipease-kitchen/id6748662065"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-              >
-                <Apple className="h-6 w-6" />
-                <span>App Store</span>
+              <a href="https://apps.apple.com/us/app/recipease-ai-recipe-scanner/id6748662065?itscg=30200&itsct=apps_box_badge&mttnsubad=6748662065" style={{ display: 'inline-block' }}>
+                <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1765238400" alt="Download on the App Store" style={{ width: '246px', height: '82px', verticalAlign: 'middle', objectFit: 'contain' }} />
               </a>
-              <a 
+              <a
                 href="https://play.google.com/store/apps/details?id=com.recipease.kitchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                style={{ display: 'inline-block' }}
               >
-                <Download className="h-5 w-5" />
-                <span>Google Play</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style={{ height: '82px', width: 'auto' }} />
               </a>
             </div>
           </div>
