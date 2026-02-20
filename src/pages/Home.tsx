@@ -1,4 +1,3 @@
-import React from 'react';
 import { Star, Smartphone, Brain, BookOpen, Camera, Wifi, Layout } from 'lucide-react';
 
 const Home = () => {
