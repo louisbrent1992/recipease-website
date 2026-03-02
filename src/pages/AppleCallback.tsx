@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Apple, CheckCircle, XCircle, Loader } from 'lucide-react';
 
 const AppleCallback = () => {
@@ -48,6 +48,7 @@ const AppleCallback = () => {
     try {
       // In a real implementation, you would send this to your backend
       // For now, we'll simulate the process
+      console.log('Processing Apple Sign In with code and state:', { code, state });
       await new Promise(resolve => setTimeout(resolve, 2000));
 
       // Simulate successful authentication
