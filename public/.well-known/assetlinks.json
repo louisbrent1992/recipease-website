@@ -1,9 +1,15 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.recipease.kitchen",
-    "sha256_cert_fingerprints": ["EE:BA:05:36:5E:D0:AE:50:B5:8C:E8:76:E2:6B:9F:14:6A:0E:5A:02:28:09:63:F2:BB:87:5D:27:F2:3F:D7:CD"]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.recipease.kitchen",
+      "sha256_cert_fingerprints": [
+        "EE:BA:05:36:5E:D0:AE:50:B5:0C:E8:76:E2:6B:9F:14:6A:0E:5A:82:2B:09:63:F2:BB:07:5D:27:F2:3F:D7:CD",
+        "66:12:C2:07:26:48:27:06:57:CA:2C:70:7E:3D:49:EE:B0:0B:69:F0:C5:DC:2C:6B:DD:23:93:3F:3F:A6:2C:D8"
+      ]
+    }
   }
-}]
-
+]
