@@ -1,3 +1,158 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-sand-50 text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    background-color: #e07a5f;
+    color: #fff;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+
+  /* Warm, custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f7f0e4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d2b996;
+    border-radius: 999px;
+    border: 3px solid #f7f0e4;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c5603f;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5
+           text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-ink/70 backdrop-blur;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-clay-600 via-clay-500 to-saffron bg-clip-text text-transparent;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold
+           transition-all duration-300 ease-out focus:outline-none focus-visible:ring-4
+           focus-visible:ring-clay/30;
+  }
+  .btn-lg {
+    @apply px-7 py-3.5 text-[0.95rem];
+  }
+  .btn-primary {
+    @apply btn bg-clay-500 text-white shadow-[0_14px_30px_-10px_rgba(224,122,95,0.7)]
+           hover:bg-clay-600 hover:-translate-y-0.5 hover:shadow-[0_22px_45px_-12px_rgba(224,122,95,0.75)];
+  }
+  .btn-dark {
+    @apply btn bg-ink-900 text-sand-50 hover:bg-ink-700 hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40 hover:bg-white/60;
+  }
+  .btn-cream {
+    @apply btn bg-sand-50 text-ink-900 hover:bg-white hover:-translate-y-0.5 shadow-soft;
+  }
+
+  /* Card */
+  .card-soft {
+    @apply rounded-4xl border border-ink/[0.06] bg-white shadow-soft;
+  }
+
+  /* iPhone device frame */
+  .device {
+    @apply relative mx-auto rounded-[2.6rem] bg-ink-900 p-2.5 shadow-device;
+    width: 270px;
+  }
+  .device::before {
+    content: '';
+    @apply absolute left-1/2 top-2.5 z-20 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-ink-900;
+  }
+  .device-screen {
+    @apply relative overflow-hidden rounded-[2.05rem] bg-sand-100;
+    aspect-ratio: 9 / 19.5;
+  }
+  .device-screen img {
+    @apply h-full w-full object-cover object-top;
+  }
+
+  /* Section eyebrow heading block */
+  .section {
+    @apply py-20 sm:py-28;
+  }
+}
+
+@layer utilities {
+  /* Subtle film grain for warmth */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  /* Scroll reveal (paired with Reveal.tsx) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .animate-float,
+    .animate-float-slow,
+    .animate-marquee,
+    .animate-spin-slow {
+      animation: none !important;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

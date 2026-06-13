@@ -1,257 +1,177 @@
-import React, { useState, useEffect } from 'react';
-import { Download, Image, Video, Smartphone, Monitor, Tablet, X, Maximize2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, Maximize2, ArrowRight } from 'lucide-react';
+import Reveal from '../components/Reveal';
+import StoreButtons from '../components/StoreButtons';
+
+type Item = {
+  id: number;
+  category: 'screens' | 'graphics';
+  kind: 'device' | 'graphic';
+  title: string;
+  description: string;
+  url: string;
+};
+
+const items: Item[] = [
+  { id: 1, category: 'screens', kind: 'device', title: 'Recipe Detail', description: 'A warm, readable recipe view with photo, timings and steps.', url: '/app/detail.png' },
+  { id: 2, category: 'screens', kind: 'device', title: 'Smart Import', description: 'Paste a link or scan a card — AI structures the recipe.', url: '/app/import.png' },
+  { id: 3, category: 'screens', kind: 'device', title: 'Pantry Chef', description: 'Generate a recipe from whatever is in your fridge.', url: '/app/generate.png' },
+  { id: 4, category: 'screens', kind: 'device', title: 'Discover', description: 'Browse and search a world of recipes by craving.', url: '/app/discover.png' },
+  { id: 5, category: 'screens', kind: 'device', title: 'Captured Recipes', description: 'Everything you saved, organized and searchable.', url: '/app/captured.png' },
+  { id: 6, category: 'screens', kind: 'device', title: 'AI Created', description: 'Fresh, original recipes generated just for you.', url: '/app/ai_created.png' },
+  { id: 7, category: 'graphics', kind: 'graphic', title: 'AI Recipe Generator', description: 'Unlock your culinary creativity.', url: '/screenshots/recipe_generator.png' },
+  { id: 8, category: 'graphics', kind: 'graphic', title: 'AI Photo Import', description: 'Instant recipe parsing with advanced AI.', url: '/screenshots/ai_photo_import.png' },
+  { id: 9, category: 'graphics', kind: 'graphic', title: 'TikTok Import', description: 'Save viral recipes in one tap.', url: '/screenshots/tiktok_import.png' },
+  { id: 10, category: 'graphics', kind: 'graphic', title: 'AI Kitchen Assistant', description: 'Cook with what you have.', url: '/screenshots/ai_kitchen_assistant.png' },
+  { id: 11, category: 'graphics', kind: 'graphic', title: 'My Collections', description: 'Organize recipes beautifully.', url: '/screenshots/my_collections.png' },
+  { id: 12, category: 'graphics', kind: 'graphic', title: 'Offline Access', description: 'Your recipes, anywhere — even offline.', url: '/screenshots/offline_access.png' },
+  { id: 13, category: 'graphics', kind: 'graphic', title: 'Smart Notifications', description: 'Daily inspiration and meal-prep nudges.', url: '/screenshots/smart_notifications.png' },
+  { id: 14, category: 'graphics', kind: 'graphic', title: 'Recipe Collections', description: 'Curated collections for every craving.', url: '/screenshots/recipe_collections.png' },
+];
+
+const filters = [
+  { id: 'all', label: 'All media' },
+  { id: 'screens', label: 'App screens' },
+  { id: 'graphics', label: 'Feature graphics' },
+];
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [expandedImage, setExpandedImage] = useState<{ url: string; title: string; description: string; category: string } | null>(null);
+  const [active, setActive] = useState<'all' | 'screens' | 'graphics'>('all');
+  const [expanded, setExpanded] = useState<Item | null>(null);
 
-  const categories = [
-    { id: 'all', name: 'All Media', icon: <Image className="h-4 w-4" /> },
-    { id: 'screenshots', name: 'Screenshots', icon: <Smartphone className="h-4 w-4" /> },
-    { id: 'features', name: 'Feature Graphics', icon: <Monitor className="h-4 w-4" /> },
-    { id: 'branding', name: 'Branding', icon: <Tablet className="h-4 w-4" /> }
-  ];
+  const visible = active === 'all' ? items : items.filter((i) => i.category === active);
 
-  const mediaItems = [
-    {
-      id: 1,
-      category: 'screenshots',
-      title: 'AI Photo Import',
-      description: 'Scan cookbooks and handwritten recipes with advanced OCR technology',
-      type: 'image',
-      url: '/screenshots/ai_photo_import.png'
-    },
-    {
-      id: 2,
-      category: 'screenshots',
-      title: 'TikTok Recipe Import',
-      description: 'Import viral recipes from TikTok and Instagram with one tap',
-      type: 'image',
-      url: '/screenshots/tiktok_import.png'
-    },
-    {
-      id: 3,
-      category: 'screenshots',
-      title: 'AI Kitchen Assistant',
-      description: 'Get personalized recipe suggestions based on ingredients you have',
-      type: 'image',
-      url: '/screenshots/ai_kitchen_assistant.png'
-    },
-    {
-      id: 4,
-      category: 'screenshots',
-      title: 'Recipe Collections',
-      description: 'Organize your recipes into beautiful custom collections',
-      type: 'image',
-      url: '/screenshots/my_collections.png'
-    },
-    {
-      id: 5,
-      category: 'features',
-      title: 'Offline Access',
-      description: 'Access all your saved recipes even without internet connection',
-      type: 'image',
-      url: '/screenshots/offline_access.png'
-    },
-    {
-      id: 6,
-      category: 'features',
-      title: 'Smart Notifications',
-      description: 'Get daily recipe inspiration and meal prep reminders',
-      type: 'image',
-      url: '/screenshots/smart_notifications.png'
-    },
-    {
-      id: 7,
-      category: 'branding',
-      title: 'RecipEase Kitchen Logo',
-      description: 'Official RecipEase Kitchen brand logo and variations',
-      type: 'image',
-      url: '/logo.png'
-    },
-    {
-      id: 8,
-      category: 'screenshots',
-      title: 'Recipe Detail View',
-      description: 'Beautiful, interactive recipe display with ingredients and instructions',
-      type: 'image',
-      url: '/screenshots/recipe_details.png'
-    }
-  ];
-
-  const filteredItems = activeCategory === 'all'
-    ? mediaItems
-    : mediaItems.filter(item => item.category === activeCategory);
-
-  // Close modal on ESC key
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && expandedImage) {
-        setExpandedImage(null);
-      }
-    };
-    window.addEventListener('keydown', handleEscape);
-    return () => window.removeEventListener('keydown', handleEscape);
-  }, [expandedImage]);
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setExpanded(null);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
-    if (expandedImage) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = expanded ? 'hidden' : '';
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     };
-  }, [expandedImage]);
+  }, [expanded]);
 
   return (
-    <div className="py-16">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 via-white to-green-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Media
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Gallery</span>
-          </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            Explore RecipEase Kitchen through screenshots, feature graphics, and brand assets.
-            See how our beautiful design meets powerful functionality.
-          </p>
+    <div>
+      {/* Hero */}
+      <section className="grain relative isolate overflow-hidden bg-sand-50 pb-14 pt-36 sm:pt-40">
+        <div className="pointer-events-none absolute -right-24 top-10 -z-10 h-[26rem] w-[26rem] rounded-full bg-sage-light/25 blur-[120px]" />
+        <div className="container-x text-center">
+          <Reveal>
+            <span className="eyebrow">A look inside</span>
+            <h1 className="mx-auto mt-6 max-w-3xl font-display text-5xl font-bold leading-[1.04] tracking-tightest text-ink sm:text-6xl">
+              See the kitchen
+              <span className="text-gradient italic"> before you download.</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-taupe">
+              Real screens, real recipes. Here’s what cooking with RecipEase actually looks like.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
+      {/* Filters + grid */}
+      <section className="section bg-sand-50 pt-4">
+        <div className="container-x">
+          <Reveal className="mb-12 flex flex-wrap justify-center gap-2">
+            {filters.map((f) => (
               <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-200 ${activeCategory === category.id
-                  ? 'bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
+                key={f.id}
+                onClick={() => setActive(f.id as typeof active)}
+                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
+                  active === f.id
+                    ? 'bg-ink-900 text-sand-50'
+                    : 'border border-ink/10 bg-white text-ink/70 hover:border-ink/30'
+                }`}
               >
-                {category.icon}
-                <span>{category.name}</span>
+                {f.label}
               </button>
             ))}
-          </div>
+          </Reveal>
 
-          {/* Media Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item, index) => (
-              <div
-                key={item.id}
-                className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-              >
-                <div
-                  className="bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden flex items-center justify-center cursor-pointer rounded-lg"
-                  onClick={() => setExpandedImage({ url: item.url, title: item.title, description: item.description, category: item.category })}
-                  style={{ minHeight: '200px', maxHeight: '400px' }}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visible.map((item, i) => (
+              <Reveal key={item.id} delay={(i % 3) * 70}>
+                <button
+                  onClick={() => setExpanded(item)}
+                  className="group block w-full overflow-hidden rounded-4xl border border-ink/[0.06] bg-white text-left shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
                 >
-                  <img
-                    src={item.url}
-                    alt={item.title}
-                    className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-white text-gray-900 p-3 rounded-full shadow-lg">
-                        <Maximize2 className="h-5 w-5" />
-                      </div>
-                    </div>
+                  <div
+                    className={`relative flex items-center justify-center overflow-hidden ${
+                      item.kind === 'device'
+                        ? 'bg-gradient-to-br from-sand-100 to-sand-200 p-6'
+                        : 'bg-sand-100'
+                    }`}
+                  >
+                    <img
+                      src={item.url}
+                      alt={item.title}
+                      loading="lazy"
+                      className={`transition-transform duration-500 group-hover:scale-[1.04] ${
+                        item.kind === 'device'
+                          ? 'max-h-72 w-auto rounded-2xl shadow-lift'
+                          : 'aspect-square w-full object-cover'
+                      }`}
+                    />
+                    <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-ink opacity-0 shadow-lift backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
+                      <Maximize2 className="h-4 w-4" />
+                    </span>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </div>
-              </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-bold text-ink">{item.title}</h3>
+                    <p className="mt-1.5 text-sm text-taupe">{item.description}</p>
+                  </div>
+                </button>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Video Showcase */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">App Walkthrough</h2>
-            <p className="text-xl text-gray-600">
-              See RecipEase Kitchen in action with our comprehensive app demonstration
+      {/* CTA */}
+      <section className="section bg-sand-100/50">
+        <div className="container-x">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">
+              Better in your hands.
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-lg text-taupe">
+              Screenshots are nice — but the app is where it clicks. Try it free.
             </p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <Video className="h-16 w-16 text-white mx-auto" />
-                <h3 className="text-2xl font-bold text-white">Coming Soon</h3>
-                <p className="text-gray-300">Full app walkthrough video will be available here</p>
-                <button className="bg-gradient-to-r from-theme-primary to-theme-primary-dark text-white px-6 py-3 rounded-full font-semibold hover:from-theme-primary-dark hover:to-theme-primary transition-all duration-200">
-                  Watch Preview
-                </button>
-              </div>
-            </div>
-          </div>
+            <div className="mt-8 flex justify-center"><StoreButtons size={56} /></div>
+            <a href="/features" className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-clay-600 hover:text-clay-700">
+              Explore the features <ArrowRight className="h-4 w-4" />
+            </a>
+          </Reveal>
         </div>
       </section>
 
-      {/* Download Media Kit */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-theme-primary to-theme-primary-dark rounded-2xl p-12 text-center text-white">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold">Download Media Kit</h2>
-              <p className="text-xl text-white/90">
-                Get high-resolution logos, screenshots, and brand assets for press and media coverage.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-theme-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-200 flex items-center justify-center space-x-2">
-                  <Download className="h-5 w-5" />
-                  <span>Download High-Res Assets</span>
-                </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-theme-primary transition-all duration-200">
-                  Brand Guidelines
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Image Modal/Lightbox */}
-      {expandedImage && (
+      {/* Lightbox */}
+      {expanded && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-sm"
-          onClick={() => setExpandedImage(null)}
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-ink-900/80 p-4 backdrop-blur-md"
+          onClick={() => setExpanded(null)}
         >
-          <div
-            className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            onClick={() => setExpanded(null)}
+            className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-ink shadow-lift transition-colors hover:bg-white"
+            aria-label="Close"
           >
-            {/* Close Button */}
-            <button
-              onClick={() => setExpandedImage(null)}
-              className="absolute top-4 right-4 z-10 bg-white text-gray-900 p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
-              aria-label="Close"
-            >
-              <X className="h-6 w-6" />
-            </button>
-
-            {/* Expanded Image */}
-            <div className="flex items-center justify-center max-w-full max-h-full">
-              <img
-                src={expandedImage.url}
-                alt={expandedImage.title}
-                className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
-              />
-            </div>
+            <X className="h-6 w-6" />
+          </button>
+          <div className="flex max-h-[88vh] max-w-3xl flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={expanded.url}
+              alt={expanded.title}
+              className="max-h-[78vh] w-auto rounded-3xl shadow-device"
+            />
+            <p className="mt-5 text-center font-display text-xl font-semibold text-sand-50">
+              {expanded.title}
+            </p>
+            <p className="mt-1 text-center text-sm text-sand-100/70">{expanded.description}</p>
           </div>
         </div>
       )}

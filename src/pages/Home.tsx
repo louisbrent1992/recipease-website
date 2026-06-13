@@ -1,211 +1,470 @@
-import { Star, Smartphone, Brain, BookOpen, Camera, Wifi, Layout } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  ScanLine,
+  Sparkles,
+  FolderHeart,
+  Compass,
+  WifiOff,
+  Bell,
+  ArrowRight,
+  Check,
+  Quote,
+  Camera,
+  Link2,
+  ChefHat,
+} from 'lucide-react';
+import Reveal from '../components/Reveal';
+import StoreButtons from '../components/StoreButtons';
+import DeviceFrame from '../components/DeviceFrame';
+
+const sources = [
+  'TikTok',
+  'Instagram Reels',
+  'YouTube',
+  'AllRecipes',
+  'Food Network',
+  'BBC Food',
+  'Handwritten cards',
+  'Cookbook pages',
+];
+
+const steps = [
+  {
+    icon: <Camera className="h-6 w-6" />,
+    kicker: 'Capture',
+    title: 'Snap it or paste it',
+    body: 'Photograph a cookbook page or handwritten card, or drop a TikTok, Reel or recipe link.',
+  },
+  {
+    icon: <Sparkles className="h-6 w-6" />,
+    kicker: 'Extract',
+    title: 'AI does the typing',
+    body: 'Ingredients, steps, times and photos are pulled out and structured in seconds — no copy-paste.',
+  },
+  {
+    icon: <FolderHeart className="h-6 w-6" />,
+    kicker: 'Cook',
+    title: 'Organize & cook offline',
+    body: 'Drop it into a smart collection, scale servings, and pull it up in the kitchen even with no signal.',
+  },
+];
+
+const showcase = [
+  {
+    badge: 'AI Photo Import',
+    icon: <ScanLine className="h-5 w-5" />,
+    title: 'Turn any cookbook into tappable recipes',
+    body: 'Point your camera at a recipe card, a magazine page, or grandma’s handwriting. Our OCR reads it, cleans it up, and saves a perfectly formatted recipe — original photo and all.',
+    points: ['Reads handwriting & print', 'Auto-detects ingredients and steps', 'Keep the original image'],
+    img: '/app/import.png',
+    alt: 'AI photo import and smart scan screen',
+  },
+  {
+    badge: 'Pantry Chef',
+    icon: <Sparkles className="h-5 w-5" />,
+    title: 'Cook with what’s already in your fridge',
+    body: 'Out of dinner ideas? List what you have and let the AI Chef generate a recipe around it — tuned to your diet, cuisine and how much time you’ve got. Less waste, more dinners.',
+    points: ['Cook with leftovers', 'Dietary & cuisine filters', 'Adjustable cook time & servings'],
+    img: '/app/generate.png',
+    alt: 'Pantry Chef AI recipe generator screen',
+    flip: true,
+  },
+  {
+    badge: 'Smart Collections',
+    icon: <FolderHeart className="h-5 w-5" />,
+    title: 'Every recipe, beautifully organized',
+    body: 'Scanned notes, saved Reels and AI creations all live together in collections you control — Meal Prep, Keto, Family Favorites, whatever you cook. Search across all of it instantly.',
+    points: ['Unlimited custom collections', 'Powerful recipe search', 'Auto icons & colors'],
+    img: '/app/captured.png',
+    alt: 'Captured recipes collection screen',
+  },
+  {
+    badge: 'Discover',
+    icon: <Compass className="h-5 w-5" />,
+    title: 'Find your next favorite meal',
+    body: 'Browse a world of recipes by craving, cuisine or comfort food. Tap once to save the good ones straight into your cookbook.',
+    points: ['Endless recipe discovery', 'One-tap save', 'Fresh picks every day'],
+    img: '/app/discover.png',
+    alt: 'Recipe discovery and search screen',
+    flip: true,
+  },
+];
+
+const marqueeShots = [
+  { src: '/app/detail.png', alt: 'Butter chicken recipe detail' },
+  { src: '/app/generate.png', alt: 'Pantry chef generator' },
+  { src: '/app/discover.png', alt: 'Recipe discovery' },
+  { src: '/app/ai_created.png', alt: 'AI created salmon recipe' },
+  { src: '/app/captured.png', alt: 'Captured recipes' },
+  { src: '/app/import.png', alt: 'Smart import' },
+  { src: '/app/shrimp.png', alt: 'Shrimp and grits recipe' },
+];
+
+const testimonials = [
+  {
+    name: 'Sarah Johnson',
+    role: 'Home cook',
+    quote:
+      'It completely changed how I cook. Importing recipes from Instagram is stupidly easy, and the AI ideas are actually good.',
+  },
+  {
+    name: 'Mike Chen',
+    role: 'Food blogger',
+    quote:
+      'I’ve tried every recipe app. This is the first one that handles my screenshots, links and old cookbooks in one place.',
+  },
+  {
+    name: 'Emily Davis',
+    role: 'Busy parent',
+    quote:
+      'The daily inspiration and meal-prep reminders save my weeknights. My family eats way more variety now.',
+  },
+];
+
+const freeIncludes = [
+  '5 recipe imports',
+  '5 AI recipe generations',
+  'Unlimited recipe discovery',
+  'Smart notifications',
+  'Credits never expire',
+];
 
 const Home = () => {
-  const features = [
-    {
-      icon: <Camera className="h-12 w-12 text-theme-primary" />,
-      title: "AI Photo Import",
-      description: "Transform your physical recipe collection into a digital cookbook. Snap a photo of cards, pages, or handwritten notes—our OCR does the rest!"
-    },
-    {
-      icon: <Smartphone className="h-12 w-12 text-theme-accent" />,
-      title: "Save TikTok & Social Media",
-      description: "Never lose a viral recipe again. Import directly from TikTok and Instagram Reels. AI extracts ingredients and instructions instantly."
-    },
-    {
-      icon: <Brain className="h-12 w-12 text-theme-secondary" />,
-      title: "AI Kitchen Assistant",
-      description: "Stuck with random ingredients? Use 'Cook with what's in my fridge' to generate custom meal plans and reduce food waste."
-    },
-    {
-      icon: <BookOpen className="h-12 w-12 text-theme-purple" />,
-      title: "Ultimate Recipe Organizer",
-      description: "Build your digital recipe book with Smart Collections. Automatically sort scanned notes, social imports, and family favorites."
-    },
-    {
-      icon: <Wifi className="h-12 w-12 text-theme-primary" />,
-      title: "Offline Access",
-      description: "Your personal recipe archive works anywhere. Access your saved recipes and collections even without an internet connection."
-    },
-    {
-      icon: <Layout className="h-12 w-12 text-theme-secondary" />,
-      title: "Smart Features",
-      description: "Dietary filters for gluten-free/keto, weekly meal planning, and community imports to see what others are cooking."
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Home Chef",
-      content: "RecipEase Kitchen has completely transformed how I cook! The AI suggestions are spot-on, and I love how easy it is to import recipes from Instagram.",
-      rating: 5
-    },
-    {
-      name: "Mike Chen",
-      role: "Food Blogger",
-      content: "As a food blogger, I needed a way to organize my recipes efficiently. RecipEase Kitchen is perfect for that and more!",
-      rating: 5
-    },
-    {
-      name: "Emily Davis",
-      role: "Busy Mom",
-      content: "The weekly digest feature saves me so much time planning meals. My family loves the variety of recipes we try now!",
-      rating: 5
-    }
-  ];
-
   return (
     <div className="overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 via-white to-green-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <div className="flex items-center space-x-2 w-fit">
-                  <img src="/logo.png" alt="RecipEase" className="h-12 w-12" />
-                  <span className="text-lg font-semibold text-theme-primary">RecipEase Kitchen</span>
-                </div>
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Scan Cookbooks,
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-theme-primary to-theme-primary-dark"> Save TikToks</span>
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Snap photos of cookbooks or import recipes from TikTok & Instagram instantly! Organize your kitchen with the ultimate AI recipe saver and scanner.
-                </p>
-              </div>
+      {/* ─── Hero ─────────────────────────────────────────── */}
+      <section className="grain relative isolate overflow-hidden bg-sand-50 pb-20 pt-32 sm:pb-28 sm:pt-36">
+        {/* decorative warm glows */}
+        <div className="pointer-events-none absolute -left-32 top-10 -z-10 h-[30rem] w-[30rem] rounded-full bg-clay-200/40 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-24 top-40 -z-10 h-[26rem] w-[26rem] rounded-full bg-saffron-300/30 blur-[120px]" />
+        <div className="pointer-events-none absolute bottom-0 left-1/3 -z-10 h-[20rem] w-[20rem] rounded-full bg-sage-light/20 blur-[120px]" />
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://apps.apple.com/us/app/recipease-ai-recipe-scanner/id6748662065?itscg=30200&itsct=apps_box_badge&mttnsubad=6748662065" style={{ display: 'inline-block' }}>
-                  <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1765238400" alt="Download on the App Store" style={{ width: '246px', height: '82px', verticalAlign: 'middle', objectFit: 'contain' }} />
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.recipease.kitchen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: 'inline-block' }}
-                >
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style={{ height: '82px', width: 'auto' }} />
-                </a>
-              </div>
+        <div className="container-x grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+          <Reveal>
+            <span className="eyebrow">
+              <Sparkles className="h-3.5 w-3.5 text-clay-500" />
+              AI recipe scanner · iOS &amp; Android
+            </span>
 
-              <div className="flex items-center space-x-6 text-sm text-gray-600">
-                <div className="flex items-center space-x-1">
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <span className="font-medium">4.9/5</span>
-                </div>
-                <div className="h-4 w-px bg-gray-300"></div>
-                <span>10,000+ downloads</span>
-                <div className="h-4 w-px bg-gray-300"></div>
-                <span>Featured on Google Play</span>
+            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tightest text-ink sm:text-6xl lg:text-7xl">
+              Every recipe
+              <br />
+              you love, in
+              <br />
+              <span className="text-gradient italic">one cookbook.</span>
+            </h1>
+
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-taupe">
+              RecipEase scans cookbooks, saves viral TikTok &amp; Instagram recipes, and
+              invents new ones from what’s in your fridge — then keeps it all organized and
+              ready to cook, even offline.
+            </p>
+
+            <div className="mt-8">
+              <StoreButtons size={56} />
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-ink/70">
+              <span className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 text-sage" /> Free to start
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 text-sage" /> No credit card
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 text-sage" /> Works offline
+              </span>
+            </div>
+          </Reveal>
+
+          {/* Phone + floating chips */}
+          <Reveal delay={120} className="relative mx-auto w-full max-w-md">
+            <div className="absolute inset-0 -z-10 rounded-[3rem] bg-gradient-to-br from-clay-100/60 to-saffron-300/30 blur-2xl" />
+            <div className="animate-float-slow">
+              <DeviceFrame src="/app/detail.png" alt="RecipEase recipe detail screen" className="w-[260px] sm:w-[280px]" />
+            </div>
+
+            {/* chip: import */}
+            <div className="absolute -left-2 top-10 hidden rounded-2xl border border-ink/[0.06] bg-white/90 px-4 py-3 shadow-lift backdrop-blur sm:flex sm:items-center sm:gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-clay-50 text-clay-600">
+                <Link2 className="h-5 w-5" />
+              </span>
+              <div className="leading-tight">
+                <p className="text-xs text-taupe">Imported from</p>
+                <p className="text-sm font-semibold text-ink">TikTok ✓</p>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative bg-gradient-to-br from-theme-background to-theme-neutral rounded-3xl p-8 shadow-2xl">
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="text-center space-y-4">
-                    <div className="bg-theme-primary text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
-                      <Brain className="h-8 w-8" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900">AI Recipe Generator</h3>
-                    <p className="text-gray-600">Generate personalized recipes with custom ingredients, dietary restrictions, and preferences</p>
-                    <div className="bg-gray-50 rounded-lg p-4 text-left">
-                      <div className="text-sm text-gray-500 mb-2">Input: chicken, gluten-free, 30 min</div>
-                      <div className="text-sm font-medium text-gray-900">Generated: Gluten-Free Chicken Stir-Fry</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div className="absolute -top-4 -right-4 bg-theme-accent text-white p-3 rounded-full shadow-lg">
-                <Star className="h-6 w-6 fill-current" />
+            {/* chip: AI */}
+            <div className="absolute -right-3 top-1/3 hidden rounded-2xl border border-ink/[0.06] bg-white/90 px-4 py-3 shadow-lift backdrop-blur sm:flex sm:items-center sm:gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-saffron/15 text-saffron-600">
+                <Sparkles className="h-5 w-5" />
+              </span>
+              <div className="leading-tight">
+                <p className="text-xs text-taupe">AI generated</p>
+                <p className="text-sm font-semibold text-ink">in 4 seconds</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">Everything You Need to Cook Better</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              RecipEase Kitchen combines intelligent technology with intuitive design to make cooking more enjoyable and efficient than ever before.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div className="space-y-4">
-                  <div className="flex justify-center">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 text-center">{feature.title}</h3>
-                  <p className="text-gray-600 text-center leading-relaxed">{feature.description}</p>
-                </div>
+            {/* chip: offline */}
+            <div className="absolute -bottom-3 left-6 hidden rounded-2xl border border-ink/[0.06] bg-white/90 px-4 py-3 shadow-lift backdrop-blur sm:flex sm:items-center sm:gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-sage/15 text-sage-600">
+                <WifiOff className="h-5 w-5" />
+              </span>
+              <div className="leading-tight">
+                <p className="text-xs text-taupe">Works offline</p>
+                <p className="text-sm font-semibold text-ink">in the kitchen</p>
               </div>
-            ))}
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">Loved by Home Chefs Everywhere</h2>
-            <p className="text-xl text-gray-600">See what our users have to say about RecipEase Kitchen</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-lg">
-                <div className="space-y-4">
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 italic">"{testimonial.content}"</p>
-                  <div>
-                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-theme-primary to-theme-primary-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
-            <h2 className="text-4xl font-bold text-white">Ready to Transform Your Cooking?</h2>
-            <p className="text-xl text-white/90">
-              Join thousands of home chefs who have already discovered the joy of cooking with RecipEase Kitchen.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://apps.apple.com/us/app/recipease-ai-recipe-scanner/id6748662065?itscg=30200&itsct=apps_box_badge&mttnsubad=6748662065" style={{ display: 'inline-block' }}>
-                <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1765238400" alt="Download on the App Store" style={{ width: '246px', height: '82px', verticalAlign: 'middle', objectFit: 'contain' }} />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.recipease.kitchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'inline-block' }}
+      {/* ─── Source marquee ───────────────────────────────── */}
+      <section className="border-y border-ink/[0.06] bg-sand-100/60 py-7">
+        <p className="container-x mb-5 text-center text-xs font-semibold uppercase tracking-[0.22em] text-taupe">
+          Import recipes from anywhere
+        </p>
+        <div className="mask-fade-x overflow-hidden">
+          <div className="flex w-max animate-marquee items-center gap-10 pr-10">
+            {[...sources, ...sources].map((s, i) => (
+              <span
+                key={i}
+                className="whitespace-nowrap font-display text-2xl font-semibold text-ink/35"
               >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style={{ height: '82px', width: 'auto' }} />
-              </a>
-            </div>
+                {s}
+              </span>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── How it works (dark band) ─────────────────────── */}
+      <section className="section relative overflow-hidden bg-ink-900 text-sand-100">
+        <div className="pointer-events-none absolute -right-20 top-0 h-80 w-80 rounded-full bg-clay-500/20 blur-[120px]" />
+        <div className="container-x relative">
+          <Reveal className="max-w-2xl">
+            <span className="eyebrow border-white/15 bg-white/5 text-sand-100/70">
+              How it works
+            </span>
+            <h2 className="mt-5 font-display text-4xl font-bold leading-tight text-sand-50 sm:text-5xl">
+              From a photo to a cooked dinner in three taps.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {steps.map((step, i) => (
+              <Reveal key={step.title} delay={i * 100}>
+                <div className="group relative h-full rounded-4xl border border-white/10 bg-white/[0.03] p-8 transition-colors duration-300 hover:bg-white/[0.06]">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-clay-500/15 text-clay-300">
+                      {step.icon}
+                    </span>
+                    <span className="font-display text-5xl font-bold text-white/10">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-clay-300">
+                    {step.kicker}
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl font-bold text-sand-50">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-sand-100/65">{step.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Feature showcase ─────────────────────────────── */}
+      <section className="section bg-sand-50">
+        <div className="container-x">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow">Why people switch</span>
+            <h2 className="mt-5 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">
+              A kitchen that does the boring parts for you.
+            </h2>
+          </Reveal>
+
+          <div className="mt-20 space-y-24 sm:space-y-32">
+            {showcase.map((f) => (
+              <div
+                key={f.title}
+                className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20"
+              >
+                <Reveal className={f.flip ? 'lg:order-2' : ''}>
+                  <span className="inline-flex items-center gap-2 rounded-full bg-clay-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-clay-600">
+                    {f.icon}
+                    {f.badge}
+                  </span>
+                  <h3 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl">
+                    {f.title}
+                  </h3>
+                  <p className="mt-4 text-lg leading-relaxed text-taupe">{f.body}</p>
+                  <ul className="mt-6 space-y-3">
+                    {f.points.map((p) => (
+                      <li key={p} className="flex items-center gap-3 text-ink/80">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-sage/15 text-sage-600">
+                          <Check className="h-3.5 w-3.5" />
+                        </span>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+
+                <Reveal
+                  delay={120}
+                  className={`relative flex justify-center ${f.flip ? 'lg:order-1' : ''}`}
+                >
+                  <div className="absolute inset-0 -z-10 mx-auto h-3/4 w-3/4 self-center rounded-[3rem] bg-gradient-to-br from-clay-100/70 to-saffron-300/30 blur-2xl" />
+                  <DeviceFrame src={f.img} alt={f.alt} />
+                </Reveal>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Screenshot marquee ───────────────────────────── */}
+      <section className="overflow-hidden bg-sand-100/60 py-20">
+        <Reveal className="container-x mb-12 max-w-xl">
+          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+            Designed to feel like a cookbook you’d keep.
+          </h2>
+          <p className="mt-3 text-taupe">
+            Warm, tactile and fast — a screen at a time.
+          </p>
+        </Reveal>
+        <div className="mask-fade-x overflow-hidden">
+          <div className="flex w-max animate-marquee gap-6 pr-6">
+            {[...marqueeShots, ...marqueeShots].map((shot, i) => (
+              <DeviceFrame
+                key={i}
+                src={shot.src}
+                alt={shot.alt}
+                className="w-[180px] shrink-0"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Testimonials ─────────────────────────────────── */}
+      <section className="section bg-sand-50">
+        <div className="container-x">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow">Loved by home cooks</span>
+            <h2 className="mt-5 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">
+              People don’t go back to screenshots.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <Reveal key={t.name} delay={i * 100}>
+                <figure className="flex h-full flex-col rounded-4xl border border-ink/[0.06] bg-white p-8 shadow-soft">
+                  <Quote className="h-8 w-8 text-clay-300" />
+                  <blockquote className="mt-4 flex-1 text-lg leading-relaxed text-ink/85">
+                    “{t.quote}”
+                  </blockquote>
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-clay-50 font-display text-lg font-bold text-clay-600">
+                      {t.name.charAt(0)}
+                    </div>
+                    <figcaption>
+                      <p className="font-semibold text-ink">{t.name}</p>
+                      <p className="text-sm text-taupe">{t.role}</p>
+                    </figcaption>
+                  </div>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Pricing teaser ───────────────────────────────── */}
+      <section className="section bg-sand-100/50">
+        <div className="container-x grid items-center gap-12 lg:grid-cols-2">
+          <Reveal>
+            <span className="eyebrow">Start free</span>
+            <h2 className="mt-5 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">
+              Free to begin. Upgrade only when you’re hooked.
+            </h2>
+            <p className="mt-4 max-w-md text-lg text-taupe">
+              Every new cook gets credits to try the magic — imports, AI generations and the
+              full kitchen. No card, no expiry, no pressure.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link to="/pricing" className="btn-primary btn-lg">
+                See all plans
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link to="/features" className="btn-ghost btn-lg">
+                Explore features
+              </Link>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="relative rounded-5xl border border-ink/[0.06] bg-white p-8 shadow-lift sm:p-10">
+              <div className="absolute -top-3 right-8 rounded-full bg-ink-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-sand-50">
+                Most popular start
+              </div>
+              <div className="flex items-baseline gap-2">
+                <span className="font-display text-5xl font-bold text-ink">Free</span>
+                <span className="text-taupe">forever to try</span>
+              </div>
+              <ul className="mt-7 space-y-3.5">
+                {freeIncludes.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-ink/85">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-sage/15 text-sage-600">
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <StoreButtons size={52} />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ─── Final CTA ────────────────────────────────────── */}
+      <section className="section bg-sand-50">
+        <div className="container-x">
+          <Reveal>
+            <div className="grain relative isolate overflow-hidden rounded-[2.5rem] bg-ink-900 px-6 py-20 text-center sm:px-12 sm:py-28">
+              <div className="pointer-events-none absolute -left-10 top-0 h-80 w-80 rounded-full bg-clay-500/30 blur-[120px]" />
+              <div className="pointer-events-none absolute -right-10 bottom-0 h-80 w-80 rounded-full bg-saffron/20 blur-[120px]" />
+
+              <span className="relative inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-sand-100/80">
+                <ChefHat className="h-4 w-4 text-clay-300" />
+                Your new kitchen companion
+              </span>
+              <h2 className="relative mx-auto mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.05] text-sand-50 sm:text-6xl">
+                Stop losing recipes.
+                <br />
+                <span className="italic text-clay-300">Start cooking them.</span>
+              </h2>
+              <p className="relative mx-auto mt-5 max-w-xl text-lg text-sand-100/70">
+                Download RecipEase and turn the chaos of links, screenshots and cookbooks into
+                one kitchen you actually use.
+              </p>
+              <div className="relative mt-9 flex justify-center">
+                <StoreButtons size={58} />
+              </div>
+              <p className="relative mt-5 flex items-center justify-center gap-1.5 text-sm text-sand-100/55">
+                <Bell className="h-4 w-4" /> Free to start · iOS &amp; Android
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>

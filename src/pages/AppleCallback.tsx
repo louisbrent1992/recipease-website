@@ -93,9 +93,9 @@ const AppleCallback = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-sand-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+        <div className="bg-white rounded-4xl shadow-soft border border-ink/[0.06] p-8 text-center">
           <div className="mb-6">
             <div className="bg-black rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               <Apple className="h-8 w-8 text-white" />

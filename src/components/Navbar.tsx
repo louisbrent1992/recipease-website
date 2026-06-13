@@ -1,82 +1,122 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { APP_STORE_URL } from '../lib/links';
+
+const navigation = [
+  { name: 'Features', href: '/features' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'About', href: '/about' },
+  { name: 'Support', href: '/support' },
+];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Features', href: '/features' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Support', href: '/support' },
-    { name: 'About', href: '/about' },
-  ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Close mobile menu on route change.
+  useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <img src="/logo.png" alt="RecipEase Logo" className="h-8 w-8" />
-              <span className="text-2xl font-bold text-orange-600">RecipEase Kitchen</span>
-            </Link>
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="container-x">
+        <nav
+          className={`mt-3 flex items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5 ${
+            scrolled || open
+              ? 'border border-ink/[0.07] bg-sand-50/85 shadow-soft backdrop-blur-xl'
+              : 'border border-transparent bg-transparent'
+          }`}
+        >
+          <Link to="/" className="group flex items-center gap-2.5 pl-1">
+            <img
+              src="/logo.png"
+              alt="RecipEase"
+              className="h-9 w-9 rounded-xl shadow-sm transition-transform duration-300 group-hover:-rotate-6"
+            />
+            <span className="font-display text-xl font-bold tracking-tight text-ink">
+              RecipEase
+            </span>
+          </Link>
+
+          <div className="hidden items-center gap-1 md:flex">
+            {navigation.map((item) => {
+              const active = location.pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                    active ? 'text-clay-600' : 'text-ink/70 hover:text-ink'
+                  }`}
+                >
+                  {item.name}
+                  {active && (
+                    <span className="absolute inset-x-4 -bottom-0.5 h-0.5 rounded-full bg-clay-500" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:block">
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary px-5 py-2.5 text-sm"
+            >
+              Get the app
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-10 w-10 items-center justify-center rounded-full text-ink md:hidden"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </nav>
+
+        {/* Mobile menu */}
+        {open && (
+          <div className="mt-2 rounded-3xl border border-ink/[0.07] bg-sand-50/95 p-3 shadow-lift backdrop-blur-xl md:hidden">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${location.pathname === item.href
-                  ? 'text-orange-600 border-b-2 border-orange-600'
-                  : 'text-gray-700 hover:text-orange-600'
-                  }`}
+                className={`block rounded-2xl px-4 py-3 text-base font-medium ${
+                  location.pathname === item.href
+                    ? 'bg-clay-50 text-clay-600'
+                    : 'text-ink/80 hover:bg-white'
+                }`}
               >
                 {item.name}
               </Link>
             ))}
-
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-orange-600 focus:outline-none focus:text-orange-600"
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-2 w-full"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${location.pathname === item.href
-                    ? 'text-orange-600 bg-orange-50'
-                    : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
-                    }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-
-            </div>
+              Get the app
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
           </div>
         )}
       </div>
-    </nav>
+    </header>
   );
 };
 

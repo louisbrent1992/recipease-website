@@ -3,7 +3,7 @@ import { Trash2, Mail, AlertTriangle } from 'lucide-react';
 
 const DataDeletion = () => {
   return (
-    <div className="py-16 bg-gray-50 min-h-screen">
+    <div className="pt-32 pb-16 bg-sand-50 min-h-screen">
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Data Deletion Instructions</h1>
