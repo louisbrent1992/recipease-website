@@ -11,13 +11,14 @@ export function picksUrl(path = '/'): string {
   return `${url}${url.includes('?') ? '&' : '?'}${PICKS_UTM}`;
 }
 
-/** Product image hosted on the shop. */
-export function picksImage(slug: string): string {
-  return `${PICKS_BASE}/images/products/${slug}.svg`;
+/** Real Amazon product photo for an ASIN (stable image-CDN path). */
+export function picksImage(asin: string): string {
+  return `https://m.media-amazon.com/images/P/${asin}.01._SCLZZZZZZZ_.jpg`;
 }
 
 export interface Pick {
   slug: string;
+  asin: string;
   name: string;
   brand: string;
   category: string;
@@ -32,6 +33,7 @@ export interface Pick {
 export const PICKS: Pick[] = [
   {
     slug: 'lodge-cast-iron-skillet-10',
+    asin: 'B00006JSUA',
     name: 'Lodge 10.25" Cast Iron Skillet',
     brand: 'Lodge',
     category: 'Cast Iron',
@@ -43,6 +45,7 @@ export const PICKS: Pick[] = [
   },
   {
     slug: 'cuisinart-multiclad-12pc',
+    asin: 'B009JXPS6U',
     name: 'Cuisinart MultiClad Pro 12-Pc Set',
     brand: 'Cuisinart',
     category: 'Stainless',
@@ -54,6 +57,7 @@ export const PICKS: Pick[] = [
   },
   {
     slug: 'tramontina-dutch-oven-7',
+    asin: 'B009HBK1E8',
     name: 'Tramontina 7-Qt Enameled Dutch Oven',
     brand: 'Tramontina',
     category: 'Dutch Ovens',
@@ -64,18 +68,20 @@ export const PICKS: Pick[] = [
     blurb: 'Le Creuset looks and performance for a fraction of the cost.',
   },
   {
-    slug: 'sensarte-nonstick-fry-pan-95',
-    name: 'SENSARTE 9.5" Nonstick Frying Pan',
-    brand: 'SENSARTE',
+    slug: 'greenpan-valencia-pro-10',
+    asin: 'B074CVZ7MM',
+    name: 'GreenPan Valencia Pro 10" Ceramic Fry Pan',
+    brand: 'GreenPan',
     category: 'Nonstick',
     rating: 4.6,
-    reviews: '41k+',
-    price: '$18.99',
-    badge: 'Budget Pick',
-    blurb: 'A featherlight everyday pan that eggs slide right off.',
+    reviews: '18k+',
+    price: '$39.99',
+    badge: 'Healthiest Nonstick',
+    blurb: 'PFAS-free ceramic nonstick that eggs slide right off.',
   },
   {
     slug: 'nordic-ware-half-sheet-2pk',
+    asin: 'B0049C2S32',
     name: 'Nordic Ware Half Sheet (2-Pack)',
     brand: 'Nordic Ware',
     category: 'Bakeware',
@@ -87,6 +93,7 @@ export const PICKS: Pick[] = [
   },
   {
     slug: 'lecreuset-dutch-oven-55',
+    asin: 'B0076NOGPY',
     name: 'Le Creuset 5.5-Qt Round Dutch Oven',
     brand: 'Le Creuset',
     category: 'Dutch Ovens',
@@ -98,6 +105,7 @@ export const PICKS: Pick[] = [
   },
   {
     slug: 'allclad-d3-fry-pan-10',
+    asin: 'B00FUF5OIS',
     name: 'All-Clad D3 10" Stainless Fry Pan',
     brand: 'All-Clad',
     category: 'Stainless',
@@ -109,6 +117,7 @@ export const PICKS: Pick[] = [
   },
   {
     slug: 'lodge-combo-cooker',
+    asin: 'B0009JKG9M',
     name: 'Lodge Cast Iron Combo Cooker',
     brand: 'Lodge',
     category: 'Cast Iron',

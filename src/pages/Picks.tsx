@@ -87,7 +87,7 @@ const Picks = () => {
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-sand-100">
                     <img
-                      src={picksImage(p.slug)}
+                      src={picksImage(p.asin)}
                       alt={p.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
