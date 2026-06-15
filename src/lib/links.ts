@@ -14,3 +14,19 @@ export const GOOGLE_PLAY_BADGE =
 
 export const SUPPORT_EMAIL = 'support@recipease.kitchen';
 export const COMPANY_EMAIL = 'admin@adventhubsolutions.com';
+
+// RecipEase social profiles — part of the cross-traffic tunnel (site ↔ app ↔ socials).
+export const SOCIALS = {
+  instagram: 'https://www.instagram.com/recipease.kitchen/',
+  tiktok: 'https://www.tiktok.com/@recipease.kitchen',
+  facebook: 'https://www.facebook.com/profile.php?id=61588206764860',
+  youtube: 'https://www.youtube.com/@recipease.kitchen',
+};
+
+// RecipEase Picks — the affiliate cookware shop (cross-traffic partner site).
+// Set this to the deployed shop URL to surface the reverse link in the footer.
+// Leave empty to hide it (no broken link). UTM tags cross-traffic for analytics.
+export const SHOP_URL: string = 'https://picks.recipease.kitchen';
+export const SHOP_URL_UTM: string = SHOP_URL
+  ? `${SHOP_URL}${SHOP_URL.includes('?') ? '&' : '?'}utm_source=recipease-app&utm_medium=referral&utm_campaign=cross-traffic`
+  : '';
