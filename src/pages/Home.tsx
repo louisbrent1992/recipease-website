@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ScanLine,
@@ -17,7 +18,7 @@ import {
 import Reveal from '../components/Reveal';
 import StoreButtons from '../components/StoreButtons';
 import DeviceFrame from '../components/DeviceFrame';
-import { PICKS, picksImage } from '../lib/picks';
+import { PICKS, fetchPicks, picksImage, type Pick } from '../lib/picks';
 
 const sources = [
   'TikTok',
@@ -132,6 +133,11 @@ const freeIncludes = [
 ];
 
 const Home = () => {
+  const [picks, setPicks] = useState<Pick[]>(PICKS);
+  useEffect(() => {
+    fetchPicks().then(setPicks).catch(() => {});
+  }, []);
+
   return (
     <div className="overflow-hidden">
       {/* ─── Hero ─────────────────────────────────────────── */}
@@ -418,7 +424,7 @@ const Home = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-                  {PICKS.slice(0, 4).map((p) => (
+                  {picks.slice(0, 4).map((p) => (
                     <Link
                       key={p.slug}
                       to="/picks"

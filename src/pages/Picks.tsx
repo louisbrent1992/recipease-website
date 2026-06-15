@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { Star, ArrowRight, ShoppingBag, ExternalLink, Check, ChefHat } from 'lucide-react';
 import Reveal from '../components/Reveal';
-import { PICKS, picksUrl, picksImage } from '../lib/picks';
+import { PICKS, fetchPicks, picksUrl, picksImage, type Pick } from '../lib/picks';
 
 const reasons = [
   'Every pick is a real, top-rated product — sorted by average customer rating.',
@@ -22,6 +23,11 @@ const Stars = ({ rating }: { rating: number }) => (
 );
 
 const Picks = () => {
+  const [picks, setPicks] = useState<Pick[]>(PICKS);
+  useEffect(() => {
+    fetchPicks().then(setPicks).catch(() => {});
+  }, []);
+
   return (
     <div className="overflow-hidden">
       {/* ─── Hero ─────────────────────────────────────────── */}
@@ -77,7 +83,7 @@ const Picks = () => {
           </Reveal>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {PICKS.map((p, i) => (
+            {picks.map((p, i) => (
               <Reveal key={p.slug} delay={(i % 4) * 80}>
                 <a
                   href={picksUrl(`/products/${p.slug}`)}

@@ -5,6 +5,10 @@
 const PICKS_BASE = 'https://picks.recipease.kitchen';
 const PICKS_UTM = 'utm_source=recipease-app&utm_medium=referral&utm_campaign=picks';
 
+// Central catalog API (single source of truth on Cloud Run / Firestore).
+const PICKS_API =
+  'https://recipease-app-server-826154873845.us-west2.run.app/api/picks';
+
 /** Build a UTM-tagged URL into the RecipEase Picks shop. */
 export function picksUrl(path = '/'): string {
   const url = `${PICKS_BASE}${path}`;
@@ -128,3 +132,44 @@ export const PICKS: Pick[] = [
     blurb: 'A deep pot and skillet lid — bakery-grade sourdough at home.',
   },
 ];
+
+function reviewsShort(n: number): string {
+  if (n >= 1000) {
+    const k = n / 1000;
+    return `${k >= 100 ? Math.round(k) : k.toFixed(Number.isInteger(k) ? 0 : 1)}k+`;
+  }
+  return n > 0 ? `${n}` : '';
+}
+
+/**
+ * Load the live catalog from the central API. Falls back to the bundled PICKS
+ * (above) if the API is unreachable, so the page always renders.
+ */
+export async function fetchPicks(): Promise<Pick[]> {
+  try {
+    const res = await fetch(PICKS_API);
+    if (!res.ok) return PICKS;
+    const data = await res.json();
+    const list: unknown[] = Array.isArray(data?.products) ? data.products : [];
+    const mapped = list
+      .map((raw) => {
+        const p = raw as Record<string, unknown>;
+        return {
+          slug: String(p.slug ?? ''),
+          asin: String(p.affiliateRef ?? p.asin ?? ''),
+          name: String(p.name ?? ''),
+          brand: String(p.brand ?? ''),
+          category: String(p.categorySlug ?? p.category ?? ''),
+          rating: Number(p.rating) || 0,
+          reviews: reviewsShort(Number(p.reviewCount) || 0),
+          price: String(p.price ?? ''),
+          badge: String(p.badge ?? ''),
+          blurb: String(p.tagline ?? p.blurb ?? ''),
+        } as Pick;
+      })
+      .filter((p) => p.slug);
+    return mapped.length ? mapped : PICKS;
+  } catch {
+    return PICKS;
+  }
+}
