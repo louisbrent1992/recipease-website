@@ -6,6 +6,7 @@ import { APP_STORE_URL } from '../lib/links';
 const navigation = [
   { name: 'Features', href: '/features' },
   { name: 'Gallery', href: '/gallery' },
+  { name: 'Shop', href: '/picks' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'About', href: '/about' },
   { name: 'Support', href: '/support' },
