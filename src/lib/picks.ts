@@ -20,6 +20,15 @@ export function picksImage(asin: string): string {
   return `https://m.media-amazon.com/images/P/${asin}.01._SCLZZZZZZZ_.jpg`;
 }
 
+/**
+ * Direct-to-Amazon affiliate link for a product. Uses the shop's cloaked
+ * /go/<slug> redirect, which 302s straight to the Amazon product page with the
+ * associate tag applied (kept server-side, changeable without a redeploy).
+ */
+export function goUrl(slug: string): string {
+  return `${PICKS_BASE}/go/${slug}`;
+}
+
 export interface Pick {
   slug: string;
   asin: string;
@@ -43,7 +52,7 @@ export const PICKS: Pick[] = [
     category: 'Cast Iron',
     rating: 4.7,
     reviews: '180k+',
-    price: '$19.90',
+    price: '$13.93',
     badge: 'Best Overall',
     blurb: "The do-everything pan that outlives the kitchen it's in.",
   },
@@ -55,7 +64,7 @@ export const PICKS: Pick[] = [
     category: 'Stainless',
     rating: 4.8,
     reviews: '9k+',
-    price: '$279.95',
+    price: '$195.97',
     badge: 'Best Set',
     blurb: "Restaurant-grade tri-ply without the chef's-shop price.",
   },
@@ -67,7 +76,7 @@ export const PICKS: Pick[] = [
     category: 'Dutch Ovens',
     rating: 4.7,
     reviews: '4.6k+',
-    price: '$99.95',
+    price: '$69.97',
     badge: 'Best Dutch Oven',
     blurb: 'Le Creuset looks and performance for a fraction of the cost.',
   },
@@ -79,7 +88,7 @@ export const PICKS: Pick[] = [
     category: 'Nonstick',
     rating: 4.6,
     reviews: '18k+',
-    price: '$39.99',
+    price: '$27.99',
     badge: 'Healthiest Nonstick',
     blurb: 'PFAS-free ceramic nonstick that eggs slide right off.',
   },
@@ -91,7 +100,7 @@ export const PICKS: Pick[] = [
     category: 'Bakeware',
     rating: 4.8,
     reviews: '43k+',
-    price: '$25.99',
+    price: '$18.19',
     badge: 'Best Seller',
     blurb: 'The commercial-grade sheet pans every test kitchen owns.',
   },
@@ -103,7 +112,7 @@ export const PICKS: Pick[] = [
     category: 'Dutch Ovens',
     rating: 4.8,
     reviews: '6k+',
-    price: '$419.95',
+    price: '$293.97',
     badge: 'Heirloom',
     blurb: 'The forever French oven you cook in for decades.',
   },
@@ -115,7 +124,7 @@ export const PICKS: Pick[] = [
     category: 'Stainless',
     rating: 4.7,
     reviews: '4.8k+',
-    price: '$99.95',
+    price: '$69.97',
     badge: 'Pro Pick',
     blurb: 'The tri-ply pan pros sear in — a buy-it-for-life skillet.',
   },
@@ -127,7 +136,7 @@ export const PICKS: Pick[] = [
     category: 'Cast Iron',
     rating: 4.8,
     reviews: '14k+',
-    price: '$49.90',
+    price: '$34.93',
     badge: 'Best for Bread',
     blurb: 'A deep pot and skillet lid — bakery-grade sourdough at home.',
   },

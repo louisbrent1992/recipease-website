@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Star, ArrowRight, ShoppingBag, ExternalLink, Check, ChefHat } from 'lucide-react';
 import Reveal from '../components/Reveal';
-import { PICKS, fetchPicks, picksUrl, picksImage, type Pick } from '../lib/picks';
+import { PICKS, fetchPicks, picksUrl, picksImage, goUrl, type Pick } from '../lib/picks';
 
 const reasons = [
   'Every pick is a real, top-rated product — sorted by average customer rating.',
@@ -86,7 +86,7 @@ const Picks = () => {
             {picks.map((p, i) => (
               <Reveal key={p.slug} delay={(i % 4) * 80}>
                 <a
-                  href={picksUrl(`/products/${p.slug}`)}
+                  href={goUrl(p.slug)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink/[0.06] bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
